@@ -1,0 +1,89 @@
+@use '../../../foundation' as *;
+
+.p-greeting {
+  padding: prem(100) 0;
+  background-color: $bg-light-cyan;
+}
+
+.p-greeting__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 prem(25);
+}
+
+.p-greeting__content {
+  display: grid;
+  gap: prem(60);
+  grid-template-columns: 1fr 1fr;
+  padding: prem(60) prem(40);
+  border-radius: prem(10);
+  background-color: $white;
+}
+
+.p-greeting__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.p-greeting__title {
+  margin: 0 0 prem(40);
+  font-size: prem(18);
+  font-weight: $bold;
+  line-height: 2.96;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-greeting__body {
+  font-size: prem(14);
+  font-weight: $medium;
+  line-height: 2.36;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-greeting__body p {
+  margin: 0 0 prem(20);
+}
+
+.p-greeting__body p:last-child {
+  margin-bottom: 0;
+}
+
+.p-greeting__image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-greeting__img {
+  width: 484px;
+  height: 484px;
+  margin-bottom: prem(30);
+  border: 1px solid $border-light-gray;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.p-greeting__caption {
+  text-align: center;
+}
+
+.p-greeting__caption-company {
+  margin: 0 0 prem(10);
+  font-size: prem(14);
+  font-weight: $medium;
+  line-height: 2.36;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-greeting__caption-name {
+  margin: 0;
+  font-size: prem(14);
+  font-weight: $medium;
+  line-height: 2.36;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}

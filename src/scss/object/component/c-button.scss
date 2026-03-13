@@ -1,59 +1,27 @@
 @use '../../foundation' as *;
 
-// ========================================
-// ボタンコンポーネント
-// ========================================
-
-.c-button {
-  position: relative;
-  z-index: 0;
+.c-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 344.35px;
-  margin: 0 auto;
-  padding: 30px 40px;
-  border-radius: 43.65px;
-  font-size: 18px;
-  font-weight: 700;
+  padding: prem(18) prem(25);
+  border-radius: prem(6);
+  font-size: prem(16);
+  font-weight: $bold;
+  line-height: 1.5;
   text-align: center;
-  color: var(--btn-text, #212529);
-  background-color: var(--btn-bg, transparent);
-  overflow: hidden;
-  transition: color 0.3s ease;
-  isolation: isolate;
-
-  @media (width <= 375px) {
-    max-width: clamp(18.75rem, 90.48%, 21.5219rem);
-    padding: clamp(1.25rem, 7.3vw, 1.875rem);
-    font-size: clamp(1.125rem, 4.1vw, 1.5rem);
-  }
-
-  &:hover {
-    color: var(--btn-hover-text, #fff);
-    opacity: 1;
-  }
-
-  span {
-    position: relative;
-    z-index: 2;
-    font-size: 20px;
-    font-weight: 700;
-    color: inherit;
-    transition: color 0.3s ease;
-
-    @media (width <= 375px) {
-      font-size: clamp(1.25rem, 4.7vw, 1.875rem);
-    }
-  }
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
-.c-button__text {
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: inherit;
+.c-btn--primary {
+  border: 1px solid $primary-yellow;
+  color: $text-dark;
+  background-color: $primary-yellow;
+}
+
+.c-btn--primary:hover {
+  opacity: 0.8;
 }

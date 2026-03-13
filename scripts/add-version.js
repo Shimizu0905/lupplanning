@@ -47,8 +47,18 @@ if (existsSync(srcHtml)) {
     );
   }
 
+  // JPG/PNGのimgタグをpicture要素でラップ（WebP対応）
+  distContent = distContent.replace(
+    /<img([^>]*?)src=["'](\.\/assets\/images\/[^"']+\.(?:jpe?g|png))["']([^>]*)>/gi,
+    (match, beforeSrc, srcPath, afterSrc) => {
+      const webpPath = srcPath.replace(/\.(jpe?g|png)$/i, '.webp');
+      return `<picture><source srcset="${webpPath}" type="image/webp"><img${beforeSrc}src="${srcPath}"${afterSrc}></picture>`;
+    }
+  );
+
   writeFileSync(distHtml, distContent, 'utf-8');
   console.log('🔧 dist/index.html のパスを本番用に変換しました');
+  console.log('🖼️  imgタグにWebP対応（picture要素）を追加しました');
 }
 
 // 対象ファイル（dist/index.htmlのみバージョン付与）

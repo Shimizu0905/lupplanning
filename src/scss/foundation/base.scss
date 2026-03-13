@@ -3,24 +3,12 @@
 @use 'functions' as *;
 
 :root {
-  // カラー変数
-  --text: #{$text-black};
-  
-  // フォントサイズ変数
-  --text-16: #{prem(16)};
-  --text-18: #{prem(18)};
-  --text-20: #{prem(20)};
-  --text-32: #{prem(32)};
-  
-  // フォントウェイト変数
-  --regular: #{$regular};
-  --bold: #{$bold};
+  --text: #{$black};
 }
 
 html {
+  font-size: $base-font-size;
   background-color: transparent;
-
-  // オーバースクロールを許可（背景引き伸ばしのため）
 
   @media (width <= 430px) {
     background-color: #fff;
@@ -61,62 +49,19 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
-
-  // Yaku Han JPを約物のみに適用し、通常文字は既存フォントを優先
-  font-family: YakuHanJPs, $font-family-base;
+  font-family: $font-family-base;
   font-weight: $font-weight-r;
   color: $black;
-
-  // 背景は常に透明（各セクションが自身の背景を持つ）
-  // オーバースクロール時はhtmlの白背景が見える
   background-color: transparent;
   overflow-x: hidden;
 
-  // オーバースクロールを許可（背景引き伸ばしのため）
-
-  // スムーズスクロール最適化
-  -webkit-overflow-scrolling: touch;
-
-  // メニュー開いている時はスクロール禁止
   &.no-scroll {
     overflow: hidden;
   }
-
-  @media (width <= 430px) {
-    min-height: 100vh;
-  }
-}
-
-// 英語テキストに適用
-.en,
-[lang="en"] {
-  font-family: $font-family-en;
 }
 
 a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  transition: opacity 0.3s;
-}
-
-a:hover {
-  @if $break-flg == 0 {
-    @include mq("md") {
-      opacity: 0.8;
-    }
-  } @else {
-    opacity: 0.8;
-
-    @include mq("md") {
-      opacity: 1;
-    }
-  }
-}
-
-.p-footer,
-main,
-.p-contents {
-  position: relative;
-  z-index: 1000;
 }

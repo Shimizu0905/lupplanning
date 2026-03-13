@@ -1,0 +1,116 @@
+@use '../../../foundation' as *;
+
+.p-faq {
+  padding: prem(100) 0;
+  background-color: $white;
+}
+
+.p-faq__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 prem(25);
+}
+
+.p-faq__header {
+  margin-bottom: prem(80);
+  text-align: center;
+}
+
+.p-faq__label {
+  margin: 0 0 prem(10);
+  font-family: 'DIN Condensed', sans-serif;
+  font-size: prem(24);
+  font-weight: $bold;
+  line-height: 3.17;
+  letter-spacing: 0.05em;
+  color: $primary-cyan;
+}
+
+.p-faq__title {
+  margin: 0;
+  font-size: prem(36);
+  font-weight: $bold;
+  line-height: 2.11;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-faq__list {
+  margin: 0;
+  padding: 0;
+}
+
+.p-faq__item {
+  border-bottom: 2px solid $text-brown;
+}
+
+.p-faq__item:first-child {
+  border-top: 2px solid $text-brown;
+}
+
+.p-faq__question {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: prem(20);
+  padding: prem(30) prem(50) prem(30) 0;
+  cursor: pointer;
+}
+
+.p-faq__q-mark {
+  font-family: Helvetica, sans-serif;
+  font-size: prem(24);
+  font-weight: $bold;
+  line-height: 1.58;
+  letter-spacing: 0.1em;
+  color: $primary-cyan;
+  flex-shrink: 0;
+}
+
+.p-faq__q-text {
+  flex: 1;
+  font-size: prem(20);
+  font-weight: $medium;
+  line-height: 1.55;
+  letter-spacing: 0.1em;
+  color: $text-brown;
+}
+
+.p-faq__q-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid $text-brown;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  transform: translateY(-50%);
+}
+
+.p-faq__answer {
+  display: flex;
+  gap: prem(20);
+  margin: 0;
+  padding: 0 0 prem(30);
+}
+
+.p-faq__a-mark {
+  font-family: Helvetica, sans-serif;
+  font-size: prem(24);
+  font-weight: $bold;
+  line-height: 1.58;
+  letter-spacing: 0.1em;
+  color: $primary-pink;
+  flex-shrink: 0;
+}
+
+.p-faq__a-text {
+  flex: 1;
+  margin: 0;
+  font-size: prem(16);
+  font-weight: $medium;
+  line-height: 1.94;
+  letter-spacing: 0.1em;
+  color: $text-brown;
+}

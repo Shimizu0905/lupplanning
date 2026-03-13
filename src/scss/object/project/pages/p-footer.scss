@@ -1,0 +1,22 @@
+@use '../../../foundation' as *;
+
+.p-footer {
+  padding: prem(40) 0;
+  background-color: $primary-cyan;
+}
+
+.p-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 prem(25);
+  text-align: center;
+}
+
+.p-footer__copyright {
+  margin: 0;
+  font-size: prem(16);
+  font-weight: $medium;
+  line-height: 1.94;
+  letter-spacing: 0.1em;
+  color: $white;
+}

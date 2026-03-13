@@ -2,6 +2,10 @@ import { defineConfig } from 'vite';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { watch } from 'chokidar';
+import viteImagemin from '@vheemstra/vite-plugin-imagemin';
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminPngquant from 'imagemin-pngquant';
+import imageminWebp from 'imagemin-webp';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -67,6 +71,21 @@ export default defineConfig({
 
   plugins: [
     // SCSS glob展開プラグインは削除（Sass公式推奨の@forward方式を使用）
+
+    // 画像自動圧縮＋WebP生成（ビルド時）
+    viteImagemin({
+      plugins: {
+        jpg: imageminMozjpeg({ quality: 80 }),
+        png: imageminPngquant({ quality: [0.7, 0.8] }),
+      },
+      makeWebp: {
+        plugins: {
+          jpg: imageminWebp({ quality: 80 }),
+          png: imageminWebp({ quality: 80 }),
+        },
+        formatFilePath: (file) => file.replace(/\.(jpe?g|png|gif)$/i, '.webp'),
+      },
+    }),
 
     // HTMLファイルの変更監視とリロード（静的サイト用）
     // root配下のHTMLならViteは普通にHMR/リロード効くことが多いが、

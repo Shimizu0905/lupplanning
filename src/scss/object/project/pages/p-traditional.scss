@@ -1,0 +1,86 @@
+@use '../../../foundation' as *;
+
+.p-traditional {
+  padding: prem(100) 0;
+  background-color: $white;
+}
+
+.p-traditional__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 prem(25);
+}
+
+.p-traditional__title {
+  margin: 0 0 prem(40);
+  font-size: prem(36);
+  font-weight: $bold;
+  line-height: 2.65;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-traditional__subtitle {
+  margin: 0 0 prem(80);
+  font-size: prem(24);
+  font-weight: $medium;
+  line-height: 1.92;
+  text-align: center;
+  letter-spacing: 0.075em;
+  color: $text-dark;
+}
+
+.p-traditional__points {
+  display: grid;
+  gap: prem(40);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.p-traditional__point {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: prem(80) prem(40) prem(60);
+  border-radius: 50%;
+  background-color: $bg-light-gray;
+  aspect-ratio: 1 / 1;
+}
+
+.p-traditional__point-icon {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: prem(30);
+}
+
+.p-traditional__point-number {
+  margin: 0 0 prem(10);
+  font-family: 'DIN Condensed', sans-serif;
+  font-size: prem(22);
+  font-weight: $bold;
+  line-height: 3.04;
+  letter-spacing: 0.05em;
+  color: $text-dark;
+}
+
+.p-traditional__point-title {
+  margin: 0 0 prem(20);
+  font-size: prem(26);
+  font-weight: $bold;
+  line-height: 1.77;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: $primary-red;
+}
+
+.p-traditional__point-text {
+  margin: 0;
+  font-size: prem(18);
+  font-weight: $medium;
+  line-height: 2;
+  text-align: center;
+  letter-spacing: 0.075em;
+  color: $text-dark;
+}

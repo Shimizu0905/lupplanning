@@ -1,48 +1,11 @@
 @use '../foundation' as *;
 
 // ========================================
-// 固定背景
-// ========================================
-.l-fixed-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100svh;
-
-  // min-height: -webkit-fill-available;
-  background-image: url('/assets/images/fv/fv.jpg');
-  background-image: image-set(
-    url('/assets/images/fv/fv.webp') type('image/webp'),
-    url('/assets/images/fv/fv.jpg') type('image/jpeg')
-  );
-  background-position: 81% center;
-
-  // background-position: calc(21% + (100vw - 430px) / 10) 28%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transform: translateZ(0);
-  will-change: transform;
-  backface-visibility: hidden;
-
-  @media (width <= 830px) {
-    background-image: url('/assets/images/fv/fv-sp.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: translate3d(0, 0, 0);
-    background-attachment: scroll;
-  }
-}
-
-
-
-// ========================================
-// サイト全体レイアウト（スマホ幅制限）
+// サイト全体レイアウト（フル幅）
 // ========================================
 .l-site {
   position: relative;
-  max-width: 430px;
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
 }
@@ -50,26 +13,7 @@
 // ========================================
 // メインコンテンツエリア
 // ========================================
-.l-main-content {
+.l-main {
   position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  background: #fff;
-  overflow: hidden;
-  
-  // パフォーマンス最適化
-  content-visibility: auto;
-  contain-intrinsic-size: auto 100vh;
-
-  // スクロール演出用の透明エリア
-  &::before {
-    position: absolute;
-    top: -100vh;
-    right: 0;
-    left: 0;
-    height: 100vh;
-    background: transparent;
-    pointer-events: none;
-    content: '';
-  }
+  width: 100%;
 }

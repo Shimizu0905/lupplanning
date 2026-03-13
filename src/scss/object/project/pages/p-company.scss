@@ -1,5 +1,84 @@
-@use "../../../foundation" as *;
+@use '../../../foundation' as *;
 
-// ========================================
-// 会社概要ページ
-// ========================================
+.p-company {
+  padding: prem(100) 0;
+  background-color: $bg-light-cyan;
+}
+
+.p-company__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 prem(25);
+}
+
+.p-company__header {
+  margin-bottom: prem(80);
+  text-align: center;
+}
+
+.p-company__label {
+  margin: 0 0 prem(10);
+  font-family: 'DIN Condensed', sans-serif;
+  font-size: prem(24);
+  font-weight: $bold;
+  line-height: 3.17;
+  letter-spacing: 0.05em;
+  color: $primary-cyan;
+}
+
+.p-company__title {
+  margin: 0;
+  font-size: prem(36);
+  font-weight: $bold;
+  line-height: 2.11;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-company__image {
+  margin-bottom: prem(60);
+  border-radius: prem(10);
+  background-color: $bg-light-gray;
+  overflow: hidden;
+}
+
+.p-company__img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+}
+
+.p-company__info {
+  margin: 0;
+  padding: 0;
+}
+
+.p-company__info-row {
+  display: grid;
+  gap: prem(40);
+  grid-template-columns: 150px 1fr;
+  padding: prem(28) 0;
+  border-bottom: 1px solid $border-light-gray;
+}
+
+.p-company__info-row:first-child {
+  border-top: 1px solid $border-light-gray;
+}
+
+.p-company__info-label {
+  margin: 0;
+  font-size: prem(14);
+  font-weight: $regular;
+  line-height: 4;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-company__info-data {
+  margin: 0;
+  font-size: prem(14);
+  font-weight: $regular;
+  line-height: 4;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}

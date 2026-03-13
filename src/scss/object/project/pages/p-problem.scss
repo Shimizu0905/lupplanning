@@ -1,0 +1,125 @@
+@use '../../../foundation' as *;
+
+.p-problem {
+  padding: prem(100) 0;
+  background-color: $white;
+}
+
+.p-problem__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 prem(25);
+}
+
+.p-problem__title {
+  margin: 0 0 prem(80);
+  font-size: prem(36);
+  font-weight: $bold;
+  line-height: 1.89;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-problem__cards {
+  display: grid;
+  gap: prem(60) prem(40);
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: prem(100);
+}
+
+.p-problem__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-problem__card-image {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: prem(20);
+  border-radius: prem(10);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.p-problem__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-problem__card-label {
+  margin-bottom: prem(15);
+  font-size: prem(24);
+  font-weight: $bold;
+  line-height: 1.46;
+  text-align: center;
+  letter-spacing: 0.075em;
+  color: $text-dark;
+}
+
+.p-problem__card-balloon {
+  position: relative;
+  padding: prem(20) prem(30);
+  border-radius: prem(10);
+  background-color: $bg-light-gray;
+}
+
+.p-problem__card-text {
+  margin: 0;
+  font-size: prem(18);
+  font-weight: $medium;
+  line-height: 1.78;
+  text-align: center;
+  letter-spacing: 0.075em;
+  color: $text-dark;
+}
+
+.p-problem__target {
+  display: grid;
+  gap: prem(40);
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: prem(80);
+}
+
+.p-problem__target-card {
+  padding: prem(50) prem(40);
+  border-radius: prem(10);
+  background-color: $bg-light-cyan;
+}
+
+.p-problem__target-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: prem(20);
+}
+
+.p-problem__target-title {
+  margin: 0 0 prem(30);
+  font-size: prem(28);
+  font-weight: $bold;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-problem__target-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.p-problem__target-list li {
+  margin-bottom: prem(15);
+  font-size: prem(18);
+  font-weight: $medium;
+  line-height: 1.78;
+  letter-spacing: 0.075em;
+  color: $text-dark;
+}
+
+.p-problem__target-list li:last-child {
+  margin-bottom: 0;
+}

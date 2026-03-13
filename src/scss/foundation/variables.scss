@@ -45,12 +45,7 @@ $padding-sp: 20px;
 $font-family-ja: "ryo-gothic-plusn", "Hiragino Sans", "Meiryo", sans-serif;
 $font-family-en: "futura-pt", "Century Gothic", arial, sans-serif;
 $font-family-base: $font-family-ja;
-$base-font-size: 16px; // prem()関数で使用する基準フォントサイズ
-$font-20-sp: clamp(16px,4.6vw,20px);
-$font-18-sp: clamp(15px,4.1vw,18px);
-$font-16-sp: clamp(12px,3.7vw,16px);
-$font-15-sp: clamp(12px,3.4vw,15px);
-$font-14-sp: clamp(11px,3.25vw,14px);
+$base-font-size: 16px;
 
 // フォントウェイト (Adobe Fonts準拠)
 $font-weight-el: 200; // Extra Light
@@ -74,20 +69,19 @@ $extra-bold: 800;
 // ベースカラー
 $black: #212529;
 $white: #fff;
-$bg-beige: #e9e7e0;
-
-
-// テキストカラー
-$text-black: #212529;
-
-// メインカラー
-$main-green: #004639;
-$main-orange: #EE780C;
-
-// 濃い緑
-$dark-green: #0c3b2c;
-$dark-green-2: #213B33;
-
-// 明るい緑
-$light-green: #428d65;
-$light-green-2: #2a5c3f;
+$text-black: $black;
+$main-green: #2d5016;
+$dark-green: #1a3009;// プロジェクトカラー
+$primary-cyan: #05868f;
+$primary-yellow: #ffd200;
+$primary-orange: #e36f21;
+$primary-red: #bf1414;
+$primary-pink: #b92958;
+$bg-light-cyan: #e4f6f7;
+$bg-light-gray: #efefef;
+$bg-light-beige: #f5f2f2;
+$text-dark: #101010;
+$text-brown: #322610;
+$text-navy: #112138;
+$border-gray: #5d5d5d;
+$border-light-gray: #c3c3c3;

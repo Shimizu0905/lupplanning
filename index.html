@@ -1,112 +1,686 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- ページタイトル -->
-    <title>サイトタイトル</title>
+  <title>AI搭載カメラで起きてからでは遅いを防ぐ | LUP Planning</title>
 
-    <!-- ファビコン -->
-    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+  <meta name="description" content="AI搭載防犯カメラで侵入前に光と音で撃退。設置後も徹底フォローする人間力の防犯をご提供します。">
+  <meta name="keywords" content="防犯カメラ,AI,セキュリティ,空き巣対策,ストーカー対策">
+  <link rel="canonical" href="./">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/images/ogp.jpg">
+  <meta property="og:title" content="AI搭載カメラで起きてからでは遅いを防ぐ | LUP Planning">
+  <meta property="og:description" content="AI搭載防犯カメラで侵入前に光と音で撃退。設置後も徹底フォローする人間力の防犯をご提供します。">
+  <meta property="og:url" content="./">
+  <meta property="og:site_name" content="LUP Planning">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <!-- 画像最適化 -->
-    <style>
-      img:is([sizes="auto" i], [sizes^="auto," i]) {
-        contain-intrinsic-size: 3000px 1500px
-      }
-    </style>
+  <script type="module" src="/src/js/main.js"></script>
+</head>
 
-    <!-- 重要な画像のプリロード（優先度付き） -->
-    <!-- <link rel="preload" as="image" href="./assets/images/fv/fv-sp.webp" media="(max-width: 430px)" type="image/webp" fetchpriority="high"> -->
-    <!-- <link rel="preload" as="image" href="./assets/images/fv/fv.webp" media="(min-width: 431px)" type="image/webp" fetchpriority="high"> -->
-
-    <!-- SEO -->
-    <meta name="description" content="サイトの説明文をここに記述します。">
-    <meta name="keywords" content="キーワード1, キーワード2, キーワード3">
-    <link rel="canonical" href="./">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="./assets/images/ogp.jpg">
-    <meta property="og:title" content="サイトタイトル">
-    <meta property="og:description" content="サイトの説明文をここに記述します。">
-    <meta property="og:url" content="./">
-    <meta property="og:site_name" content="サイト名">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Google Analytics (gtag.js) - 測定IDを設定してください -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script> -->
-
-    <!-- 外部ライブラリ -->
-    <!-- Google Fonts (使用していないためコメントアウト) -->
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"> -->
-    <!-- CSS & JavaScript -->
-    <script type="module" src="/src/js/main.js"></script>
-  </head>
-
-  <body>
-    <!-- 固定背景 -->
-    <div class="l-fixed-bg"></div>
-
-    <div id="page" class="l-site">
-      <header class="c-header js-header" id="header">
-        <div class="c-header__inner">
-          <h1 class="c-header__logo js-header__logo">
-            <a href="./" class="c-header__logo-link">
-              <img src="./assets/images/common/logo-green.svg" alt="サイト名" class="c-header__logo-img">
-            </a>
-          </h1>
-          <button class="c-header__hamburger js-hamburger" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+<body>
+  <div id="page" class="l-site">
+    <header class="p-header" id="header">
+      <div class="p-header__inner">
+        <div class="p-header__logo">
+          <a href="./" class="p-header__logo-link">
+            <img src="./assets/images/common/logo.png" alt="LUP Planning" class="p-header__logo-img">
+          </a>
         </div>
-      </header>
-
-      <!-- ドロワーメニュー -->
-      <div class="c-drawer js-drawer">
-        <div class="c-drawer__overlay js-drawer-overlay"></div>
-        <nav class="c-drawer__content">
-          <ul class="c-drawer__menu">
-            <!-- メニュー項目を追加 -->
-          </ul>
-          <!-- ソーシャルリンクやCTAを追加 -->
-        </nav>
+        <a href="#contact" class="c-btn c-btn--primary p-header__btn">
+          お問い合わせ
+        </a>
       </div>
+    </header>
 
-      <main class="l-main-content">
-        <!-- コンテンツエリア -->
-      </main>
-
-      <!-- Footer -->
-      <footer class="p-footer">
-        <div class="p-footer__inner">
-          <div class="p-footer__logo">
-            <img src="./assets/images/common/footer-logo.svg" alt="サイト名" class="p-footer__logo-img">
-          </div>
-          <div class="p-footer__bottom">
-            <div class="p-footer__copyright">
-              <img src="./assets/images/common/footer-copy.svg" alt="Copyright">
-            </div>
-            <button type="button" class="p-footer__pagetop" id="pagetop">
-              <img src="./assets/images/common/footer-page-top.svg" alt="ページトップへ" class="p-footer__pagetop-icon">
-            </button>
+    <main class="l-main">
+      <!-- FV -->
+      <section class="p-fv" aria-labelledby="fv-title">
+        <div class="p-fv__inner">
+          <div class="p-fv__body">
+            <h1 class="p-fv__title" id="fv-title">
+              <img src="./assets/images/fv-title.webp" alt="侵入前に光と音で撃退" class="p-fv__title-img">
+            </h1>
+            <p class="p-fv__lead">AI搭載カメラで起きてからでは遅いを防ぐ</p>
+            <p class="p-fv__text">設置後も徹底フォローする人間力の防犯を</p>
           </div>
         </div>
-      </footer>
-    </div>
-  </body>
+        <div class="p-fv__authority">
+          <img src="./assets/images/fv-info.png" alt="For JAPAN" class="p-fv__authority-logo">
+          <div class="p-fv__authority-text">
+            <p class="p-fv__authority-label">メディア出演実績あり</p>
+            <p class="p-fv__authority-title">代表 中園 For JAPAN 出演!!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEL CTA -->
+      <section class="c-tel-cta">
+        <div class="c-tel-cta__inner">
+          <p class="c-tel-cta__text">導入コストを抑えて<br>空き巣・当て逃げ・ストーカー被害をAIで徹底ブロック!!</p>
+          <div class="c-tel-cta__box">
+            <img src="./assets/images/common/icon-phone.svg" alt="" class="c-tel-cta__icon">
+            <div class="c-tel-cta__info">
+              <p class="c-tel-cta__label">無料診断・最適な設置プランのご提案</p>
+              <a href="tel:09042715007" class="c-tel-cta__number">090-4271-5007</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section class="p-problem">
+        <div class="p-problem__inner">
+          <h2 class="p-problem__title">こんなお悩みからご相談が急増中!!</h2>
+          <div class="p-problem__cards">
+            <div class="p-problem__card">
+              <div class="p-problem__card-image">
+                <img src="./assets/images/problem/problem-01.jpg" alt="" class="p-problem__card-img">
+              </div>
+              <div class="p-problem__card-label">空き巣被害・資材の盗難</div>
+              <div class="p-problem__card-balloon">
+                <p class="p-problem__card-text">周りの住民や従業員まで不安を感じている</p>
+              </div>
+            </div>
+            <div class="p-problem__card">
+              <div class="p-problem__card-image">
+                <img src="./assets/images/problem/problem-02.jpg" alt="" class="p-problem__card-img">
+              </div>
+              <div class="p-problem__card-label">駐車場での当て逃げ・車へのいたずら</div>
+              <div class="p-problem__card-balloon">
+                <p class="p-problem__card-text">泣き寝入りで終わらせたくない!!</p>
+              </div>
+            </div>
+            <div class="p-problem__card">
+              <div class="p-problem__card-image">
+                <img src="./assets/images/problem/problem-03.jpg" alt="" class="p-problem__card-img">
+              </div>
+              <div class="p-problem__card-label">遠隔地の施設や別荘の見守り</div>
+              <div class="p-problem__card-balloon">
+                <p class="p-problem__card-text">今のカメラでは不安が残る…</p>
+              </div>
+            </div>
+            <div class="p-problem__card">
+              <div class="p-problem__card-image">
+                <img src="./assets/images/problem/problem-04.jpg" alt="" class="p-problem__card-img">
+              </div>
+              <div class="p-problem__card-label">ストーカー・偵察活動</div>
+              <div class="p-problem__card-balloon">
+                <p class="p-problem__card-text">事が起こる前の不穏な動きを察知したい</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-problem__target">
+            <div class="p-problem__target-card">
+              <img src="./assets/images/common/icon-home.svg" alt="" class="p-problem__target-icon">
+              <h3 class="p-problem__target-title">一般家庭・店舗経営の方</h3>
+              <ul class="p-problem__target-list">
+                <li>・近くの家で空き巣被害があった。うちも狙われるか心配…</li>
+                <li>・駐車場へのイタズラをなんとかしたい</li>
+                <li>・ストーカー被害の不審な動きをなんとかして捉えたい</li>
+                <li>・遠隔地の別荘の見守りに今のカメラだと不安…</li>
+              </ul>
+            </div>
+            <div class="p-problem__target-card">
+              <img src="./assets/images/common/icon-office.svg" alt="" class="p-problem__target-icon">
+              <h3 class="p-problem__target-title">経営者・企業担当者</h3>
+              <ul class="p-problem__target-list">
+                <li>・資材の盗難が頻発するのでなんとか防犯対策したい</li>
+                <li>・録画できてデータが破壊されないものがほしい</li>
+                <li>・事務所が複雑なのでうまく設置できるか心配</li>
+                <li>・社内のコンプライアンス管理のために導入したい</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Traditional Camera Problem -->
+      <section class="p-traditional">
+        <div class="p-traditional__inner">
+          <h2 class="p-traditional__title">そのお悩み、従来の防犯カメラでは<br>解決できません!!</h2>
+          <p class="p-traditional__subtitle">従来のカメラは、ただ録画するだけで<br>犯行後の証拠集めには役立ちますが、未然に防ぐという最大の目的は達成できません</p>
+          <div class="p-traditional__points">
+            <div class="p-traditional__point">
+              <img src="./assets/images/traditional/icon-01.svg" alt="" class="p-traditional__point-icon">
+              <p class="p-traditional__point-number">POINT01</p>
+              <h3 class="p-traditional__point-title">牽制力がない</h3>
+              <p class="p-traditional__point-text">録画しているだけでは<br>侵入者は気にせず犯行に及びます</p>
+            </div>
+            <div class="p-traditional__point">
+              <img src="./assets/images/traditional/icon-02.svg" alt="" class="p-traditional__point-icon">
+              <p class="p-traditional__point-number">POINT02</p>
+              <h3 class="p-traditional__point-title">設置後の<br>フォローがない</h3>
+              <p class="p-traditional__point-text">何かあったときに対応してくれる<br>業者がいないのも問題です</p>
+            </div>
+            <div class="p-traditional__point">
+              <img src="./assets/images/traditional/icon-03.svg" alt="" class="p-traditional__point-icon">
+              <p class="p-traditional__point-number">POINT03</p>
+              <h3 class="p-traditional__point-title">設定が複雑</h3>
+              <p class="p-traditional__point-text">専門知識が必要で、<br>自分で運用するのが難しい<br>機種もあります</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature -->
+      <section class="p-feature">
+        <div class="p-feature__inner">
+          <div class="p-feature__header">
+            <p class="p-feature__label"><span class="p-feature__label-brand">LUP Planning</span>が選ばれる</p>
+            <h2 class="p-feature__title">3つの絶対的な強み</h2>
+          </div>
+
+          <!-- Feature 01 -->
+          <div class="p-feature__item">
+            <div class="p-feature__item-header">
+              <p class="p-feature__item-label">FEATURE</p>
+              <p class="p-feature__item-number">01</p>
+            </div>
+            <h3 class="p-feature__item-title">AIが犯行前に警告する一次牽制力</h3>
+            <div class="p-feature__item-points">
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-01-01.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">AI自動認識検知機能</h4>
+                <p class="p-feature__item-point-text">人、車、動物などをAIが瞬時に識別。<br>誤検知が少なく、本当に必要な情報だけをキャッチします。</p>
+              </div>
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-01-02.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">その場で撃退</h4>
+                <p class="p-feature__item-point-text">
+                  不審者を検知すると、カメラ本体から「音と光」で即座に警告（アプローチングフンフン機能）。<br>侵入者をその場から遠ざけます。<br>※音声警告や威嚇の機能がふくまれているAIカメラの場合</p>
+              </div>
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-01-03.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">即時通知</h4>
+                <p class="p-feature__item-point-text">カメラが直接スマートフォンに通知。遠隔地でもリアルタイムで状況を確認し、次の手を打てます。</p>
+              </div>
+            </div>
+            <p class="p-feature__item-caption">従来のカメラとの最大の違いは<br>事件を未然に防ぐことです。</p>
+          </div>
+
+          <!-- Feature 02 -->
+          <div class="p-feature__item">
+            <div class="p-feature__item-header">
+              <p class="p-feature__item-label">FEATURE</p>
+              <p class="p-feature__item-number">02</p>
+            </div>
+            <h3 class="p-feature__item-title">プロの視点！<br>潜入想定による絶対に逃さない最適配置技術</h3>
+            <div class="p-feature__item-points">
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-02-01.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">第1エリア（道路〜庭）</h4>
+                <p class="p-feature__item-point-text">通路やフェンス沿いなど、侵入経路を細かくチェック。</p>
+              </div>
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-02-02.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">第2エリア（建物内）</h4>
+                <p class="p-feature__item-point-text">窓や出入り口、そして屋内の貴重品がある場所まで想定し、死角ゼロの計画を立案。</p>
+              </div>
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-02-03.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">配置提案</h4>
+                <p class="p-feature__item-point-text">事前に図面をいただき、最適な配置を検討します。</p>
+              </div>
+            </div>
+            <p class="p-feature__item-caption">当社の代表中園は防犯のプロとしての知見を活かし、<br>他社には真似できない泥棒目線で設置プランをご提案します。</p>
+          </div>
+
+          <!-- Feature 03 -->
+          <div class="p-feature__item">
+            <div class="p-feature__item-header">
+              <p class="p-feature__item-label">FEATURE</p>
+              <p class="p-feature__item-number">03</p>
+            </div>
+            <h3 class="p-feature__item-title">設置してからが本当の仕事<br>責任ある徹底フォロー体制</h3>
+            <div class="p-feature__item-points">
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-03-01.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">ハウスメーカーに<br>間に合う設置時期</h4>
+                <p class="p-feature__item-point-text">新築等の場合は、作業前にハウスメーカーに問い合わせ、穴を開けた際に保証はどうなるのかをご確認いただくことをおすすめします。</p>
+              </div>
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-03-02.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">万全のサポート体制<br>&迅速な対応</h4>
+                <p class="p-feature__item-point-text">定期的な状態のヒアリング、監視補助の対応も可能。LUP
+                  Planningが責任を持って対応します。<br>調整や相談は1〜2時間で対応可能。
+                </p>
+              </div>
+              <div class="p-feature__item-point">
+                <div class="p-feature__item-point-image">
+                  <img src="./assets/images/feature/feature-03-03.jpg" alt="" class="p-feature__item-point-img">
+                </div>
+                <h4 class="p-feature__item-point-title">物理配置かつ複雑な<br>レコーダー配線で破壊を防ぐ</h4>
+                <p class="p-feature__item-point-text">
+                  通常、クラウド保存型の防犯カメラが多く、カメラ自体を破壊されることもありますが、弊社では物理レコーダーで配線を複雑化し、破壊も防ぎます。
+                </p>
+              </div>
+            </div>
+            <p class="p-feature__item-caption">設置したら終わり、ではありません。<br>お客様の安心を永続的にサポートします。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Price -->
+      <section class="p-price">
+        <div class="p-price__inner">
+          <div class="p-price__header">
+            <p class="p-price__label">PRICE</p>
+            <h2 class="p-price__title">料金プラン</h2>
+          </div>
+
+          <div class="p-price__intro">
+            <div class="p-price__intro-images">
+              <img src="./assets/images/price/camera-image-01.jpg" alt="" class="p-price__intro-img">
+              <img src="./assets/images/price/camera-image-02.jpg" alt="" class="p-price__intro-img">
+            </div>
+            <div class="p-price__intro-box">
+              <p class="p-price__intro-label">1台あたりの設置費用（工事費込み）</p>
+              <p class="p-price__intro-price">20<span class="p-price__intro-price-unit">万円〜</span><span
+                  class="p-price__intro-price-tax">（税込）</span></p>
+              <p class="p-price__intro-note">
+                ※平均設置数：3台　レコーダー込みの価格です。<br>※商品は一例です。専用工事が不要な場合15万円〜の場合もあります。<br>※追加費用不要。見積もり時、ご提示した費用以外は一切いただきませんのでご安心ください。
+              </p>
+            </div>
+          </div>
+
+          <!-- Economy Plan -->
+          <div class="p-price__plan">
+            <h3 class="p-price__plan-title">エコノミープラン</h3>
+            <div class="p-price__plan-items">
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-camera.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">標準カメラ</p>
+                <ul class="p-price__plan-item-list">
+                  <li>・バレット式AIカメラ<br>（AI4.0カメラ）</li>
+                  <li>・制御システム</li>
+                </ul>
+              </div>
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-material.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">材料費</p>
+                <ul class="p-price__plan-item-list">
+                  <li>・LANケーブル</li>
+                  <li>・マウント</li>
+                  <li>・ポール（必要時）</li>
+                </ul>
+              </div>
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-work.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">設置工事費</p>
+                <ul class="p-price__plan-item-list">
+                  <li>•防犯カメラ設置工事</li>
+                  <li>•配線工事</li>
+                  <li>•ポール設置工事（該当時）</li>
+                </ul>
+              </div>
+            </div>
+            <p class="p-price__plan-price">¥202,400<span class="p-price__plan-price-tilde">〜</span></p>
+            <p class="p-price__plan-badge">クレカ分割も可能!</p>
+          </div>
+
+          <!-- Standard Plan -->
+          <div class="p-price__plan">
+            <h3 class="p-price__plan-title">スタンダードプラン</h3>
+            <div class="p-price__plan-items">
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-camera.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">標準カメラ</p>
+                <ul class="p-price__plan-item-list">
+                  <li>・PTZ可変AIカメラ<br>（AI4.0カメラ）</li>
+                  <li>・制御システム</li>
+                </ul>
+              </div>
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-material.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">材料費</p>
+                <ul class="p-price__plan-item-list">
+                  <li>・LANケーブル</li>
+                  <li>・マウント</li>
+                  <li>・ジャンクションボックス</li>
+                </ul>
+              </div>
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-work.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">設置工事費</p>
+                <ul class="p-price__plan-item-list">
+                  <li>•防犯カメラ設置工事</li>
+                  <li>•配線工事</li>
+                  <li>•ポール設置工事（該当時）</li>
+                </ul>
+              </div>
+            </div>
+            <p class="p-price__plan-price">¥242,000<span class="p-price__plan-price-tilde">〜</span></p>
+            <p class="p-price__plan-badge">クレカ分割も可能!</p>
+          </div>
+
+          <!-- High-end Plan -->
+          <div class="p-price__plan">
+            <h3 class="p-price__plan-title">ハイエンドプラン</h3>
+            <div class="p-price__plan-items">
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-camera.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">ハイスペックカメラ</p>
+                <ul class="p-price__plan-item-list">
+                  <li>・Hive<br>（PTZハイスペックAIカメラ）</li>
+                  <li>・制御システム</li>
+                </ul>
+              </div>
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-material.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">材料費</p>
+                <ul class="p-price__plan-item-list">
+                  <li>・LANケーブル</li>
+                  <li>•マウント</li>
+                  <li>•ポール（必要時）</li>
+                </ul>
+              </div>
+              <div class="p-price__plan-item">
+                <div class="p-price__plan-item-icon">
+                  <img src="./assets/images/price/icon-work.svg" alt="" class="p-price__plan-item-icon-img">
+                </div>
+                <p class="p-price__plan-item-label">設置工事費</p>
+                <ul class="p-price__plan-item-list">
+                  <li>•防犯カメラ設置工事</li>
+                  <li>•配線工事</li>
+                  <li>•ポール設置工事（該当時）</li>
+                </ul>
+              </div>
+            </div>
+            <p class="p-price__plan-price">¥355,300<span class="p-price__plan-price-tilde">〜</span></p>
+            <p class="p-price__plan-badge">クレカ分割も可能!</p>
+          </div>
+
+          <div class="p-price__benefits">
+            <ul class="p-price__benefits-list">
+              <li class="p-price__benefits-item">分割支払いで月々の支払いを抑えられます</li>
+              <li class="p-price__benefits-item">500万ピクセル以上の高画質モデルを配備可能</li>
+              <li class="p-price__benefits-item">複数台の設置も可能</li>
+            </ul>
+          </div>
+
+          <p class="p-price__estimate">ご要望に合わせて、お見積もりさせていただきます。</p>
+        </div>
+      </section>
+
+      <!-- Greeting -->
+      <section class="p-greeting">
+        <div class="p-greeting__inner">
+          <div class="p-greeting__content">
+            <div class="p-greeting__text">
+              <h2 class="p-greeting__title">お客様との「つながり」を大切に</h2>
+              <div class="p-greeting__body">
+                <p>「For JAPAN」への出演は、<br>私たちの技術と情熱が評価された証です。</p>
+                <p>しかし、私たちが本当に大切にしているのは、AIの技術そのものではありません。</p>
+                <p>
+                  防犯とは、お客様が「安心して過ごせる時間」を創ること。LUP（ルプ：一匹狼が新しい群れを作る）という社名には、私が持つプロの知識と技術を、お客様という「新しい群れ」のために最大限に活かしたい、という想いが込められています。
+                </p>
+                <p>設置後のフォローを含め、お客様に寄り添う<br>「人間力の防犯」をお約束します。</p>
+              </div>
+            </div>
+            <div class="p-greeting__image">
+              <img src="./assets/images/greeting/ceo.jpg" alt="代表取締役 中園 博貴" class="p-greeting__img">
+              <div class="p-greeting__caption">
+                <p class="p-greeting__caption-company">合同会社LUP Planning</p>
+                <p class="p-greeting__caption-name">代表取締役　中園 博貴</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="p-faq">
+        <div class="p-faq__inner">
+          <div class="p-faq__header">
+            <p class="p-faq__label">FAQ</p>
+            <h2 class="p-faq__title">よくあるご質問</h2>
+          </div>
+          <dl class="p-faq__list">
+            <div class="p-faq__item">
+              <dt class="p-faq__question">
+                <span class="p-faq__q-mark">Q</span>
+                <span class="p-faq__q-text">導入にはどのくらいの期間がかかりますか？</span>
+                <span class="p-faq__q-icon"></span>
+              </dt>
+              <dd class="p-faq__answer">
+                <span class="p-faq__a-mark">A</span>
+                <p class="p-faq__a-text">
+                  設置工事自体は1日で完了します。<br>ただし、事前に最適な設置プランをご提案するための現地調査や調整に時間をいただきます。<br>無料診断から設置完了までの具体的なスケジュールは、個別にお問い合わせください。
+                </p>
+              </dd>
+            </div>
+            <div class="p-faq__item">
+              <dt class="p-faq__question">
+                <span class="p-faq__q-mark">Q</span>
+                <span class="p-faq__q-text">カメラの設置工事の際、在宅は必要ですか？</span>
+                <span class="p-faq__q-icon"></span>
+              </dt>
+              <dd class="p-faq__answer">
+                <span class="p-faq__a-mark">A</span>
+                <p class="p-faq__a-text">はい、設置工事の際は立ち会いをお願いしております。</p>
+              </dd>
+            </div>
+            <div class="p-faq__item">
+              <dt class="p-faq__question">
+                <span class="p-faq__q-mark">Q</span>
+                <span class="p-faq__q-text">設置後のメンテナンスやフォローアップはありますか？</span>
+                <span class="p-faq__q-icon"></span>
+              </dt>
+              <dd class="p-faq__answer">
+                <span class="p-faq__a-mark">A</span>
+                <p class="p-faq__a-text">はい、定期的なヒアリングやサポートを行っております。</p>
+              </dd>
+            </div>
+            <div class="p-faq__item">
+              <dt class="p-faq__question">
+                <span class="p-faq__q-mark">Q</span>
+                <span class="p-faq__q-text">新築への設置を検討していますが、ハウスメーカーとの連携は必要ですか？</span>
+                <span class="p-faq__q-icon"></span>
+              </dt>
+              <dd class="p-faq__answer">
+                <span class="p-faq__a-mark">A</span>
+                <p class="p-faq__a-text">新築の場合は、事前にハウスメーカーへ保証内容の確認をお願いしております。</p>
+              </dd>
+            </div>
+            <div class="p-faq__item">
+              <dt class="p-faq__question">
+                <span class="p-faq__q-mark">Q</span>
+                <span class="p-faq__q-text">遠隔地からの映像確認は可能ですか？</span>
+                <span class="p-faq__q-icon"></span>
+              </dt>
+              <dd class="p-faq__answer">
+                <span class="p-faq__a-mark">A</span>
+                <p class="p-faq__a-text">はい、スマートフォンでリアルタイムに確認できます。</p>
+              </dd>
+            </div>
+            <div class="p-faq__item">
+              <dt class="p-faq__question">
+                <span class="p-faq__q-mark">Q</span>
+                <span class="p-faq__q-text">支払い方法は何が利用できますか？</span>
+                <span class="p-faq__q-icon"></span>
+              </dt>
+              <dd class="p-faq__answer">
+                <span class="p-faq__a-mark">A</span>
+                <p class="p-faq__a-text">現金、銀行振込、クレジットカード決済に対応しております。</p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Company -->
+      <section class="p-company">
+        <div class="p-company__inner">
+          <div class="p-company__header">
+            <p class="p-company__label">COMPANY</p>
+            <h2 class="p-company__title">会社概要</h2>
+          </div>
+          <div class="p-company__image">
+            <img src="./assets/images/company/company-image.jpg" alt="" class="p-company__img">
+          </div>
+          <dl class="p-company__info">
+            <div class="p-company__info-row">
+              <dt class="p-company__info-label">会社名</dt>
+              <dd class="p-company__info-data">合同会社 LUP Planning</dd>
+            </div>
+            <div class="p-company__info-row">
+              <dt class="p-company__info-label">代表者</dt>
+              <dd class="p-company__info-data">中園 博貴</dd>
+            </div>
+            <div class="p-company__info-row">
+              <dt class="p-company__info-label">所在地</dt>
+              <dd class="p-company__info-data">〒302-0117 茨城県守谷市野木崎37</dd>
+            </div>
+            <div class="p-company__info-row">
+              <dt class="p-company__info-label">電話番号</dt>
+              <dd class="p-company__info-data">090-4271-5007</dd>
+            </div>
+            <div class="p-company__info-row">
+              <dt class="p-company__info-label">事業内容</dt>
+              <dd class="p-company__info-data">防犯カメラの販売、設置、メンテナンス及び監視補助サービス</dd>
+            </div>
+            <div class="p-company__info-row">
+              <dt class="p-company__info-label">許認可・資格</dt>
+              <dd class="p-company__info-data">[該当する許認可・資格があれば記載]</dd>
+            </div>
+            <div class="p-company__info-row">
+              <dt class="p-company__info-label">料金について</dt>
+              <dd class="p-company__info-data">1台単品： 25万円〜　お見積もり提示後お支払い</dd>
+            </div>
+            <div class="p-company__info-row">
+              <dt class="p-company__info-label">キャンセル規定</dt>
+              <dd class="p-company__info-data">[キャンセルポリシーを明記]</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="p-contact" id="contact">
+        <div class="p-contact__inner">
+          <div class="p-contact__header">
+            <p class="p-contact__label">CONTACT</p>
+            <h2 class="p-contact__title">お問い合わせ</h2>
+          </div>
+          <form class="p-contact__form" action="#" method="post">
+            <div class="p-contact__form-item">
+              <label class="p-contact__form-label">
+                お問い合わせ内容
+                <span class="p-contact__form-required">必須</span>
+              </label>
+              <div class="p-contact__form-radios">
+                <label class="p-contact__form-radio">
+                  <input type="radio" name="inquiry_type" value="無料診断を希望" required>
+                  <span>無料診断を希望</span>
+                </label>
+                <label class="p-contact__form-radio">
+                  <input type="radio" name="inquiry_type" value="見積もり依頼" required>
+                  <span>見積もり依頼</span>
+                </label>
+                <label class="p-contact__form-radio">
+                  <input type="radio" name="inquiry_type" value="製品についての問い合わせ" required>
+                  <span>製品についての問い合わせ</span>
+                </label>
+              </div>
+            </div>
+            <div class="p-contact__form-item">
+              <label class="p-contact__form-label">
+                お名前
+                <span class="p-contact__form-required">必須</span>
+              </label>
+              <input type="text" name="name" class="p-contact__form-input" required>
+            </div>
+            <div class="p-contact__form-item">
+              <label class="p-contact__form-label">
+                フリガナ
+                <span class="p-contact__form-required">必須</span>
+              </label>
+              <input type="text" name="kana" class="p-contact__form-input" required>
+            </div>
+            <div class="p-contact__form-item">
+              <label class="p-contact__form-label">
+                お電話番号
+                <span class="p-contact__form-required">必須</span>
+              </label>
+              <input type="tel" name="tel" class="p-contact__form-input" required>
+            </div>
+            <div class="p-contact__form-item">
+              <label class="p-contact__form-label">
+                メールアドレス
+                <span class="p-contact__form-required">必須</span>
+              </label>
+              <input type="email" name="email" class="p-contact__form-input" required>
+            </div>
+            <div class="p-contact__form-item">
+              <label class="p-contact__form-label">
+                設置先ご住所
+                <span class="p-contact__form-required">必須</span>
+              </label>
+              <input type="text" name="address" class="p-contact__form-input" required>
+            </div>
+            <div class="p-contact__form-item">
+              <label class="p-contact__form-label">自由記入欄</label>
+              <textarea name="message" class="p-contact__form-textarea" rows="10"></textarea>
+            </div>
+            <div class="p-contact__form-privacy">
+              <label class="p-contact__form-checkbox">
+                <input type="checkbox" name="privacy" required>
+                <span>プライバシーポリシーに同意の上、送信する</span>
+              </label>
+            </div>
+            <button type="submit" class="c-btn c-btn--primary p-contact__form-submit">送信する</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-footer">
+      <div class="p-footer__inner">
+        <p class="p-footer__copyright">Copyright © 合同会社 LUP Planning All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
 
 </html>

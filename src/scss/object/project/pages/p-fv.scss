@@ -1,0 +1,112 @@
+@use '../../../foundation' as *;
+
+.p-fv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: clamp(420px, 38vh, 720px);
+  margin-top: 100px;
+  padding: prem(24) prem(25);
+  /* fallback（古いSafariが image-set で落ちることがあるため先に指定） */
+  background-image: url("../../assets/images/fv-bg.png");
+  @supports (background-image: image-set(url("") type("image/webp"))) {
+    background-image: image-set(
+      url("../../assets/images/fv-bg.webp") type("image/webp"),
+      url("../../assets/images/fv-bg.png") type("image/png")
+    );
+  }
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* 4K対応時: fv-bg@2x.webp を用意して 2x を追加可 */
+  overflow: hidden;
+}
+.p-fv__inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 980px);
+}
+
+.p-fv__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  text-align: center;
+}
+
+.p-fv__title {
+  width: min(100%, 720px);
+  margin: 0;
+}
+
+.p-fv__title-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.p-fv__lead {
+  margin: prem(16) 0 0;
+  font-size: clamp(18px, 1.2vw, 22px);
+  font-weight: $bold;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: $white;
+  text-shadow: 0 2px 10px rgb(0 0 0 / 24%);
+}
+
+.p-fv__text {
+  margin: prem(8) 0 0;
+  font-size: clamp(14px, 1vw, 18px);
+  font-weight: $medium;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  color: $white;
+  text-shadow: 0 2px 10px rgb(0 0 0 / 24%);
+}
+
+@include mq("lg") {
+  .p-fv {
+    padding: prem(24);
+  }
+}
+
+@include mq("md") {
+  .p-fv {
+    min-height: 420px;
+    padding: prem(24) prem(20);
+  }
+
+  .p-fv__inner {
+    width: min(100%, 720px);
+  }
+
+  .p-fv__title {
+    width: min(100%, 560px);
+  }
+
+  .p-fv__lead {
+    line-height: 1.5;
+  }
+
+  .p-fv__text {
+    line-height: 1.6;
+  }
+}
+
+@include mq("sm") {
+  .p-fv {
+    height: clamp(420px, 52vh, 560px);
+    margin-top: 100px;
+  }
+
+  .p-fv__title {
+    width: 100%;
+  }
+}

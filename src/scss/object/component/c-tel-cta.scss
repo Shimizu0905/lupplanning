@@ -1,0 +1,103 @@
+@use '../../foundation' as *;
+
+.c-tel-cta {
+  padding: clamp(28px, 3vw, 48px) 0;
+  background-color: #f5f2f2;
+}
+
+.c-tel-cta__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 prem(25);
+  text-align: center;
+}
+
+.c-tel-cta__text {
+  margin: 0 0 clamp(20px, 2vw, 32px);
+  font-size: clamp(24px, 1.9vw, 36px);
+  font-weight: $bold;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  color: $text-dark;
+}
+
+.c-tel-cta__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: prem(30);
+  padding: clamp(24px, 2.4vw, 40px) clamp(24px, 3.2vw, 60px);
+  border: 3px solid $primary-cyan;
+  border-radius: prem(10);
+  background-color: $white;
+}
+
+.c-tel-cta__icon {
+  width: 100px;
+  height: 100px;
+}
+
+.c-tel-cta__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: prem(10);
+}
+
+.c-tel-cta__label {
+  margin: 0;
+  font-size: prem(20);
+  font-weight: $medium;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.c-tel-cta__number {
+  font-family: 'DIN Condensed', sans-serif;
+  font-size: prem(60);
+  font-weight: $extra-bold;
+  line-height: 1.2;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  color: $primary-cyan;
+}
+
+.c-tel-cta__number:hover {
+  opacity: 0.8;
+}
+
+@include mq("md") {
+  .c-tel-cta__box {
+    gap: prem(20);
+    padding: prem(24);
+  }
+
+  .c-tel-cta__icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .c-tel-cta__info {
+    align-items: center;
+  }
+
+  .c-tel-cta__label {
+    font-size: prem(16);
+    text-align: center;
+  }
+
+  .c-tel-cta__number {
+    font-size: clamp(36px, 8vw, 52px);
+  }
+}
+
+@include mq("sm") {
+  .c-tel-cta__text {
+    line-height: 1.5;
+  }
+
+  .c-tel-cta__box {
+    flex-direction: column;
+  }
+}
