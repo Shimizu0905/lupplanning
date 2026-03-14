@@ -5,7 +5,6 @@ import { watch } from 'chokidar';
 import viteImagemin from '@vheemstra/vite-plugin-imagemin';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
-import imageminWebp from 'imagemin-webp';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -64,7 +63,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 3000,
-    strictPort: true,
+    strictPort: false, // 3000が使用中なら次の空きポートで起動
     cors: true,
     // hmrは削除（ViteデフォルトでOK。LAN越しでスマホ確認する場合は削除が安定）
   },
@@ -72,18 +71,11 @@ export default defineConfig({
   plugins: [
     // SCSS glob展開プラグインは削除（Sass公式推奨の@forward方式を使用）
 
-    // 画像自動圧縮＋WebP生成（ビルド時）
+    // 画像圧縮のみ（WebP生成なし）
     viteImagemin({
       plugins: {
         jpg: imageminMozjpeg({ quality: 80 }),
         png: imageminPngquant({ quality: [0.7, 0.8] }),
-      },
-      makeWebp: {
-        plugins: {
-          jpg: imageminWebp({ quality: 80 }),
-          png: imageminWebp({ quality: 80 }),
-        },
-        formatFilePath: (file) => file.replace(/\.(jpe?g|png|gif)$/i, '.webp'),
       },
     }),
 

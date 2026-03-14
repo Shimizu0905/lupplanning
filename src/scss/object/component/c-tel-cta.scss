@@ -26,10 +26,20 @@
   justify-content: center;
   align-items: center;
   gap: prem(30);
-  padding: clamp(24px, 2.4vw, 40px) clamp(24px, 3.2vw, 60px);
-  border: 3px solid $primary-cyan;
-  border-radius: prem(10);
-  background-color: $white;
+  max-width: 781px;
+  margin: 0 auto;
+  background-color: $primary-yellow;
+
+  @include mq("md") {
+    gap: prem(20);
+    padding: prem(24);
+  }
+}
+
+.c-tel-cta__box a {
+  width: 100%;
+  height: 100%;
+  padding: 40px 10px;
 }
 
 .c-tel-cta__icon {
@@ -40,8 +50,12 @@
 .c-tel-cta__info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: prem(10);
+
+  @include mq("md") {
+    gap: prem(10);
+  }
 }
 
 .c-tel-cta__label {
@@ -54,13 +68,8 @@
 }
 
 .c-tel-cta__number {
-  font-family: 'DIN Condensed', sans-serif;
-  font-size: prem(60);
-  font-weight: $extra-bold;
-  line-height: 1.2;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  color: $primary-cyan;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 .c-tel-cta__number:hover {

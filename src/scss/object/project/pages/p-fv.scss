@@ -3,26 +3,32 @@
 .p-fv {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: clamp(420px, 38vh, 720px);
   margin-top: 100px;
   padding: prem(24) prem(25);
+
   /* fallback（古いSafariが image-set で落ちることがあるため先に指定） */
-  background-image: url("../../assets/images/fv-bg.png");
+  background-image: url("../../assets/images/fv/fv-bg.png");
+
   @supports (background-image: image-set(url("") type("image/webp"))) {
     background-image: image-set(
-      url("../../assets/images/fv-bg.webp") type("image/webp"),
-      url("../../assets/images/fv-bg.png") type("image/png")
+      url("../../assets/images/fv/fv-bg.webp") type("image/webp"),
+      url("../../assets/images/fv/fv-bg.png") type("image/png")
     );
   }
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
   /* 4K対応時: fv-bg@2x.webp を用意して 2x を追加可 */
   overflow: hidden;
 }
+
 .p-fv__inner {
   position: relative;
   z-index: 1;
@@ -108,5 +114,68 @@
 
   .p-fv__title {
     width: 100%;
+  }
+}
+
+.p-fv__authority {
+  display: flex;
+  align-items: center;
+  gap: prem(20);
+  margin-top: prem(50);
+  padding: prem(25) prem(40);
+  background-color: $white;
+}
+
+.p-fv__authority-logo {
+  width: 124px;
+  height: 124px;
+}
+
+.p-fv__authority-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.p-fv__authority-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(8);
+  text-align: center;
+}
+
+.p-fv__authority-label {
+  margin: 0;
+  font-size: prem(24);
+  font-weight: $bold;
+  line-height: 1.46;
+  letter-spacing: 0.1em;
+  color: $text-navy;
+}
+
+.p-fv__authority-title {
+  margin: 0;
+  padding-bottom: prem(4);
+  border-bottom: 4px solid #dc0000;
+  font-size: prem(24);
+  font-weight: $bold;
+  line-height: 1.46;
+  letter-spacing: 0.1em;
+  color: $text-navy;
+}
+
+@include mq("md") {
+  .p-fv__authority {
+    flex-direction: row;
+  }
+
+  .p-fv__authority-logo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .p-fv__authority-label {
+    font-size: prem(16);
   }
 }
