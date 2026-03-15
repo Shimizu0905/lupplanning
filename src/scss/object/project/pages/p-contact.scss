@@ -41,6 +41,18 @@
   gap: prem(30);
 }
 
+.p-contact__form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .p-contact__form-item {
   display: flex;
   flex-direction: column;
@@ -129,18 +141,29 @@
   margin-top: prem(20);
 }
 
+.p-contact__form-privacy-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(12);
+}
+
 .p-contact__form-checkbox {
   display: flex;
   align-items: center;
   gap: prem(10);
-  cursor: pointer;
+  cursor: default;
 }
 
 .p-contact__form-checkbox input[type="checkbox"] {
   width: 17.18px;
   height: 17.18px;
   margin: 0;
-  cursor: pointer;
+  cursor: default;
+}
+
+.p-contact__form-checkbox input[type="checkbox"]:disabled {
+  opacity: 1;
 }
 
 .p-contact__form-checkbox span {
@@ -151,6 +174,29 @@
   color: $text-dark;
 }
 
+.p-contact__form-privacy-link {
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: underline;
+  letter-spacing: inherit;
+  color: $primary-cyan;
+  background: transparent;
+  cursor: pointer;
+  text-underline-offset: 0.18em;
+}
+
+.p-contact__form-privacy-link:hover {
+  opacity: 0.8;
+}
+
+.p-contact__form-privacy-link:focus-visible {
+  outline: 2px solid $primary-cyan;
+  outline-offset: prem(4);
+}
+
 .p-contact__form-submit {
   width: 440px;
   height: 80px;
@@ -159,4 +205,182 @@
   font-weight: $bold;
   line-height: 1.75;
   letter-spacing: 0.1em;
+}
+
+.p-privacy-modal {
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: prem(24);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+  inset: 0;
+}
+
+.p-privacy-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.p-privacy-modal__overlay {
+  position: absolute;
+  background-color: rgba(#101010, 0.65);
+  inset: 0;
+}
+
+.p-privacy-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(100%, prem(860));
+  max-height: min(88vh, prem(760));
+  border-radius: prem(20);
+  box-shadow: 0 prem(20) prem(40) rgba(#000, 0.18);
+  background-color: $white;
+  overflow: hidden;
+}
+
+.p-privacy-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: prem(16);
+  padding: prem(24) prem(28);
+  border-bottom: 1px solid rgba(#101010, 0.12);
+}
+
+.p-privacy-modal__title {
+  margin: 0;
+  font-size: clamp(prem(22), 2vw, prem(28));
+  font-weight: $bold;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: $text-dark;
+}
+
+.p-privacy-modal__close {
+  width: prem(40);
+  height: prem(40);
+  padding: 0;
+  border: 0;
+  font-size: prem(28);
+  line-height: 1;
+  color: #666;
+  background: transparent;
+  cursor: pointer;
+}
+
+.p-privacy-modal__body {
+  max-height: min(60vh, prem(500));
+  padding: prem(28);
+  font-size: prem(16);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: #3d3d3d;
+  overflow-y: auto;
+}
+
+.p-privacy-modal__body p,
+.p-privacy-modal__body ul {
+  margin: 0 0 prem(18);
+}
+
+.p-privacy-modal__body h3 {
+  margin: prem(28) 0 prem(12);
+  font-size: prem(18);
+  font-weight: $bold;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  color: $text-dark;
+}
+
+.p-privacy-modal__body ul {
+  padding-left: prem(24);
+}
+
+.p-privacy-modal__body li {
+  margin-bottom: prem(8);
+}
+
+.p-privacy-modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: prem(16);
+  padding: prem(20) prem(28) prem(24);
+  border-top: 1px solid rgba(#101010, 0.12);
+  background-color: #fafafa;
+}
+
+.p-privacy-modal__note {
+  margin: 0;
+  font-size: prem(14);
+  font-weight: $medium;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  color: #555;
+}
+
+.p-privacy-modal__agree {
+  min-width: prem(220);
+  padding: prem(16) prem(28);
+  border: 0;
+  border-radius: prem(999);
+  font-size: prem(16);
+  font-weight: $bold;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: $white;
+  background-color: $primary-cyan;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.p-privacy-modal__agree:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@include mq("md") {
+  .p-contact__form-radios {
+    flex-direction: column;
+    gap: prem(14);
+  }
+
+  .p-contact__form-submit {
+    width: 100%;
+    max-width: prem(440);
+  }
+
+  .p-privacy-modal {
+    padding: prem(16);
+  }
+
+  .p-privacy-modal__header,
+  .p-privacy-modal__body,
+  .p-privacy-modal__footer {
+    padding-right: prem(18);
+    padding-left: prem(18);
+  }
+
+  .p-privacy-modal__body {
+    max-height: 58vh;
+    font-size: prem(15);
+  }
+
+  .p-privacy-modal__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .p-privacy-modal__agree {
+    width: 100%;
+    min-width: 0;
+  }
 }

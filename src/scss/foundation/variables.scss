@@ -11,7 +11,7 @@ $breakpoints: null;
   $breakpoints: (
     "sm": "screen and (min-width: 400px)",
     "md": "screen and (min-width: 768px)",
-    "lg": "screen and (min-width: 1000px)",
+    "lg": "screen and (min-width: 1024px)",
     "xl": "screen and (min-width: 1240px)",
     "xxl": "screen and (min-width: 1440px)",
   );
@@ -20,7 +20,7 @@ $breakpoints: null;
   $breakpoints: (
     "sm": "screen and (max-width: 500px)",
     "md": "screen and (max-width: 767px)",
-    "lg": "screen and (max-width: 1000px)",
+    "lg": "screen and (max-width: 1024px)",
     "xl": "screen and (max-width: 1240px)",
     "xxl": "screen and (max-width: 1440px)",
   );
@@ -71,7 +71,7 @@ $black: #212529;
 $white: #fff;
 $text-black: $black;
 $main-green: #2d5016;
-$dark-green: #1a3009;// プロジェクトカラー
+$dark-green: #1a3009; // プロジェクトカラー
 $primary-cyan: #05868f;
 $primary-yellow: #ffd200;
 $primary-orange: #e36f21;

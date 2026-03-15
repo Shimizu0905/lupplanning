@@ -7,9 +7,10 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: clamp(420px, 38vh, 720px);
-  margin-top: 100px;
-  padding: prem(24) prem(25);
+  height: clamp(420px, 80vh, 720px);
+
+  // margin-top: 100px;
+  padding: prem(24) prem(25) 0;
 
   /* fallback（古いSafariが image-set で落ちることがあるため先に指定） */
   background-image: url("../../assets/images/fv/fv-bg.png");
@@ -45,7 +46,7 @@
 }
 
 .p-fv__title {
-  width: min(100%, 720px);
+  width: clamp(670px, 50.09vw, 957px);
   margin: 0;
 }
 
@@ -57,36 +58,34 @@
 }
 
 .p-fv__lead {
-  margin: prem(16) 0 0;
-  font-size: clamp(18px, 1.2vw, 22px);
+  margin: prem(70) 0 0;
+  font-size: clamp(32px, 2.4vw, 43px);
   font-weight: $bold;
   line-height: 1.6;
   text-align: center;
   letter-spacing: 0.06em;
   color: $white;
-  text-shadow: 0 2px 10px rgb(0 0 0 / 24%);
 }
 
 .p-fv__text {
   margin: prem(8) 0 0;
-  font-size: clamp(14px, 1vw, 18px);
-  font-weight: $medium;
+  font-size: clamp(32px, 2.4vw, 43px);
+  font-weight: $bold;
   line-height: 1.7;
   letter-spacing: 0.08em;
   color: $white;
-  text-shadow: 0 2px 10px rgb(0 0 0 / 24%);
 }
 
 @include mq("lg") {
   .p-fv {
-    padding: prem(24);
+    padding: prem(24) prem(24) 0;
   }
 }
 
 @include mq("md") {
   .p-fv {
     min-height: 420px;
-    padding: prem(24) prem(20);
+    padding: prem(24) prem(20) 0;
   }
 
   .p-fv__inner {
@@ -118,17 +117,16 @@
 }
 
 .p-fv__authority {
-  display: flex;
-  align-items: center;
-  gap: prem(20);
-  margin-top: prem(50);
-  padding: prem(25) prem(40);
-  background-color: $white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(500px, 34.84vw, 669px);
+  margin: 0 -1px -1px 0;
 }
 
 .p-fv__authority-logo {
-  width: 124px;
-  height: 124px;
+  width: 100%;
+  height: 100%;
 }
 
 .p-fv__authority-logo-img {
@@ -168,6 +166,8 @@
 @include mq("md") {
   .p-fv__authority {
     flex-direction: row;
+    width: calc(100% + #{prem(40)});
+    margin-left: prem(-20);
   }
 
   .p-fv__authority-logo {

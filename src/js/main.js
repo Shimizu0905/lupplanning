@@ -9,5 +9,8 @@ import '../scss/style.scss';
 
 // ヘッダー機能
 import './header.js';
+import './header-fv-scroll.js';
 // ページトップボタン
 import './pagetop.js';
+import './faq.js';
+import './privacy-modal.js';

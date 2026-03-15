@@ -1,86 +1,360 @@
-@use '../../../foundation' as *;
+@use "../../../foundation" as *;
 
 .p-traditional {
-  padding: prem(100) 0;
-  background-color: $white;
+  padding: prem(88) 0;
+
+  @include mq("md") {
+    padding: prem(56) 0 prem(64);
+  }
 }
 
 .p-traditional__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 prem(25);
+  position: relative;
+}
+
+.p-traditional__header {
+  max-width: prem(920);
+  margin: 0 auto clamp(36px, 4vw, 56px);
 }
 
 .p-traditional__title {
-  margin: 0 0 prem(40);
-  font-size: prem(36);
+  margin: 0 0 prem(24);
+  font-size: clamp(prem(26), 3.1vw, prem(40));
   font-weight: $bold;
-  line-height: 2.65;
+  line-height: 1.7;
   text-align: center;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: $text-dark;
+
+  @include mq("md") {
+    margin-bottom: prem(18);
+    font-size: clamp(prem(24), 7vw, prem(31));
+    line-height: 1.55;
+  }
 }
 
 .p-traditional__subtitle {
-  margin: 0 0 prem(80);
-  font-size: prem(24);
+  margin: 0;
+  font-size: clamp(prem(16), 1.55vw, prem(22));
   font-weight: $medium;
-  line-height: 1.92;
+  line-height: 1.95;
   text-align: center;
-  letter-spacing: 0.075em;
-  color: $text-dark;
+  letter-spacing: 0.05em;
+  color: #3f3f3f;
+
+  @include mq("md") {
+    font-size: prem(15);
+    line-height: 1.8;
+  }
 }
 
-.p-traditional__points {
-  display: grid;
-  gap: prem(40);
-  grid-template-columns: repeat(3, 1fr);
+.p-traditional__list {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include mq("md") {
+    flex-direction: column;
+    gap: prem(36);
+  }
+
+  @include mq("sm") {
+    gap: prem(64);
+  }
 }
 
-.p-traditional__point {
+.p-traditional__item {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+
+  @include mq("md") {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.p-traditional__card {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: prem(80) prem(40) prem(60);
-  border-radius: 50%;
-  background-color: $bg-light-gray;
-  aspect-ratio: 1 / 1;
-}
-
-.p-traditional__point-icon {
   width: 100%;
-  max-width: 300px;
-  height: auto;
-  margin-bottom: prem(30);
+  padding: prem(12);
+
+  @include mq("md") {
+    flex-direction: row;
+  }
 }
 
-.p-traditional__point-number {
-  margin: 0 0 prem(10);
-  font-family: 'DIN Condensed', sans-serif;
-  font-size: prem(22);
-  font-weight: $bold;
-  line-height: 3.04;
-  letter-spacing: 0.05em;
-  color: $text-dark;
+// --- PC用 item別カード調整 ---
+
+.p-traditional__item--01 .p-traditional__card {
+  padding-top: 0;
+
+  @include mq("md") {
+    padding-top: prem(28);
+  }
 }
 
-.p-traditional__point-title {
-  margin: 0 0 prem(20);
-  font-size: prem(26);
-  font-weight: $bold;
-  line-height: 1.77;
-  text-align: center;
-  letter-spacing: 0.1em;
-  color: $primary-red;
+.p-traditional__item--02 .p-traditional__card,
+.p-traditional__item--03 .p-traditional__card {
+  padding-top: prem(24);
+
+  @include mq("md") {
+    padding-top: prem(28);
+  }
 }
 
-.p-traditional__point-text {
+.p-traditional__item--02 .p-traditional__card {
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  margin-top: 0;
+
+  @include mq("md") {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    padding: 0;
+  }
+}
+
+// --- visual ---
+
+.p-traditional__visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
   margin: 0;
-  font-size: prem(18);
-  font-weight: $medium;
-  line-height: 2;
+
+  @include mq("md") {
+    justify-content: center;
+    width: 40%;
+    margin: 0 0 prem(12);
+  }
+}
+
+.p-traditional__item--01 .p-traditional__visual,
+.p-traditional__item--03 .p-traditional__visual {
+  flex: 1;
+  align-items: center;
+  min-height: 0;
+
+  @include mq("md") {
+    flex: none;
+    align-items: center;
+    min-height: auto;
+  }
+}
+
+// --- image ---
+
+.p-traditional__image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 prem(14) prem(18) rgba(#000, 0.09));
+
+  @include mq("md") {
+    filter: drop-shadow(0 prem(8) prem(12) rgba(#000, 0.07));
+  }
+}
+
+.p-traditional__item--01 .p-traditional__image {
+  width: prem(310);
+  aspect-ratio: 310 / 183;
+  object-fit: contain;
+
+  @include mq("md") {
+    width: 100%;
+    max-width: prem(188);
+    aspect-ratio: auto;
+  }
+}
+
+.p-traditional__item--02 .p-traditional__image {
+  width: prem(148);
+  aspect-ratio: 148 / 284;
+  object-fit: contain;
+
+  @include mq("md") {
+    width: 100%;
+    max-width: clamp(prem(110), 24vw, prem(140));
+    aspect-ratio: auto;
+  }
+
+  @include mq("sm") {
+    width: clamp(prem(80), 60vw, prem(100));
+  }
+}
+
+.p-traditional__item--03 .p-traditional__image {
+  width: clamp(prem(200), 24vw, prem(220));
+  aspect-ratio: 242 / 245;
+  object-fit: contain;
+
+  @include mq("md") {
+    width: 100%;
+    max-width: prem(176);
+    aspect-ratio: auto;
+  }
+}
+
+// --- PC用 visual位置調整（SPではリセット）---
+
+.p-traditional__item--01 .p-traditional__visual {
+  justify-content: flex-end;
+  margin-bottom: clamp(prem(-20), -2.5vw, prem(-35));
+  padding-right: clamp(0px, 1.8vw, 14px);
+
+  @include mq("md") {
+    justify-content: center;
+    margin-bottom: 0;
+    padding-right: 0;
+  }
+}
+
+.p-traditional__item--02 .p-traditional__visual {
+  justify-content: flex-start;
+  margin-top: clamp(prem(-80), -5.5vw, prem(-70));
+  padding-left: clamp(0px, 1vw, 10px);
+
+  @include mq("md") {
+    flex: 1 1 0;
+    justify-content: center;
+    min-width: prem(80);
+    margin-top: 0;
+    padding-left: 0;
+  }
+}
+
+.p-traditional__item--03 .p-traditional__visual {
+  justify-content: flex-end;
+  margin-bottom: clamp(prem(-6), -0.8vw, prem(-12));
+  padding-right: clamp(0px, 1.8vw, 14px);
+
+  @include mq("md") {
+    justify-content: center;
+    margin-bottom: 0;
+    padding-right: 0;
+  }
+}
+
+// --- badge ---
+
+.p-traditional__badge {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: prem(10);
+  width: clamp(prem(224), 28vw, prem(391));
+  margin-top: clamp(-52px, -3.5vw, -24px);
+  padding: prem(34);
   text-align: center;
-  letter-spacing: 0.075em;
-  color: $text-dark;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+
+  @include mq("md") {
+    gap: prem(8);
+    width: 60%;
+    margin-top: 0;
+    padding: 0;
+    aspect-ratio: auto;
+  }
+}
+
+// row-reverse時、visualとbadgeで幅を分割。badgeは01・03と同じ60%でギザギザの大きさを統一
+.p-traditional__item--02 .p-traditional__badge {
+  @include mq("md") {
+    flex: 0 0 60%;
+    width: 60%;
+    min-width: 0;
+  }
+}
+
+.p-traditional__badge::before {
+  position: absolute;
+  z-index: -1;
+  background-image: url("/assets/images/traditional/traditional-item-bg.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  inset: 0;
+
+  @include mq("md") {
+    inset: 50% auto auto 50%;
+    width: clamp(248px, 41vw, 315px);
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+  }
+
+  @include mq("sm") {
+    width: clamp(220px, 60vw, 315px);
+  }
+}
+
+// --- point icon ---
+
+.p-traditional__point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(prem(50), 7vw, prem(100));
+  height: auto;
+  margin: 0;
+
+  @include mq("md") {
+    width: clamp(prem(50), 10vw, prem(100));
+  }
+}
+
+.p-traditional__point-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+// --- card title ---
+
+.p-traditional__card-title {
+  margin: 0;
+  font-size: clamp(prem(26), 2vw, prem(28));
+  font-weight: $bold;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  color: $primary-red;
+
+  @include mq("md") {
+    font-size: clamp(prem(20), 4vw, prem(24));
+    line-height: 1.4;
+    text-align: center;
+  }
+}
+
+// --- text ---
+
+.p-traditional__text {
+  margin: 0;
+  font-size: clamp(prem(16), 1.12vw, prem(18));
+  font-weight: $medium;
+  line-height: 1.95;
+  letter-spacing: 0.05em;
+  color: #444;
+
+  @include mq("md") {
+    max-width: prem(320);
+    margin: 0 auto;
+    font-size: prem(15);
+    line-height: 1.85;
+    text-align: center;
+  }
 }

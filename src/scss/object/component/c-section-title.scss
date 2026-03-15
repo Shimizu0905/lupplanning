@@ -1,0 +1,10 @@
+@use '../../foundation' as *;
+
+.c-section-title {
+  font-size: clamp(prem(26), 3.1vw, prem(40));
+  font-weight: $bold;
+  line-height: 1.7;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: $text-dark;
+}

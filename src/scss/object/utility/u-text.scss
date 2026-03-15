@@ -4,37 +4,26 @@
 // 両端揃え（text-align: justify）で使用する際に、読点（、）と句点（。）の幅を調整して見た目を整える
 // JavaScriptで自動的に句読点を<span>で囲む場合は、.u-text-kutenクラスを使用
 
-.comma,
-.kuten,
-.kakko-open,
-.kakko-close,
-.nakaten {
-  display: inline-block;
-  vertical-align: baseline;
+.u-text-red {
+  color: $primary-red;
 }
 
-/* 読点「、」の調整 */
-.comma {
-  margin-right: -0.5em;
-  margin-left: 0.1em;
+.u-text-orange {
+  color: $primary-orange;
 }
 
-/* 句点「。」は 1/3 em くらい */
-.kuten {
-  margin-right: -0.37em;
+.u-br-lg-show {
+  display: none;
+
+  @include mq("lg") {
+    display: block;
+  }
 }
 
-.kakko-open {
-  margin-left: -0.8em;
-  letter-spacing: 0.09em;
-}
+.u-br-md-show {
+  display: none;
 
-.kakko-close {
-  margin-right: -0.5em;
-  margin-left: -0.05em;
-}
-
-.nakaten {
-  margin-right: -0.2em;
-  margin-left: -0.2em;
+  @include mq("md") {
+    display: block;
+  }
 }

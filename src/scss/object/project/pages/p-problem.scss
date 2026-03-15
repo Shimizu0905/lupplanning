@@ -1,30 +1,36 @@
-@use '../../../foundation' as *;
+@use "../../../foundation" as *;
 
 .p-problem {
-  padding: prem(100) 0;
+  padding: prem(100) 0 prem(64);
   background-color: $white;
-}
 
-.p-problem__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 prem(25);
+  @include mq("md") {
+    padding: prem(72) 0;
+  }
 }
 
 .p-problem__title {
   margin: 0 0 prem(80);
-  font-size: prem(36);
+  font-size: clamp(prem(24), 2.4vw, prem(36));
   font-weight: $bold;
   line-height: 1.89;
   text-align: center;
   letter-spacing: 0.1em;
   color: $text-dark;
+
+  @include mq("lg") {
+    font-size: clamp(prem(24), 3.4vw, prem(40));
+  }
+
+  @include mq("md") {
+    margin-bottom: prem(56);
+  }
 }
 
 .p-problem__cards {
-  display: grid;
-  gap: prem(60) prem(40);
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(16px, 2.1vw, 40px);
   margin-bottom: prem(100);
 }
 
@@ -34,7 +40,7 @@
   align-items: center;
 }
 
-.p-problem__card-image {
+.p-problem__card-img {
   position: relative;
   width: 100%;
   max-width: 500px;
@@ -42,12 +48,12 @@
   border-radius: prem(10);
   overflow: hidden;
   aspect-ratio: 16 / 9;
-}
 
-.p-problem__card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .p-problem__card-label {
@@ -78,46 +84,102 @@
 }
 
 .p-problem__target {
-  display: grid;
+  display: flex;
   gap: prem(40);
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: prem(80);
+
+  @include mq("lg") {
+    gap: 3vw;
+  }
+
+  @include mq("md") {
+    flex-direction: column;
+    align-items: center;
+    gap: prem(32);
+  }
+}
+
+.p-problem__bottom-arrow {
+  display: flex;
+  justify-content: center;
+  margin-top: prem(50);
+}
+
+.p-problem__bottom-arrow-img {
+  display: block;
+  width: 100%;
+  max-width: prem(675);
+  height: auto;
 }
 
 .p-problem__target-card {
-  padding: prem(50) prem(40);
-  border-radius: prem(10);
-  background-color: $bg-light-cyan;
-}
+  padding: prem(52) prem(10);
+  border: 1px solid #5d5d5d;
+  border-radius: prem(21);
+  background-color: $white;
 
-.p-problem__target-icon {
-  width: 80px;
-  height: 80px;
-  margin-bottom: prem(20);
+  @include mq("lg") {
+    width: clamp(600px, 54.6vw, 781px);
+    padding: 2vw;
+  }
 }
 
 .p-problem__target-title {
-  margin: 0 0 prem(30);
-  font-size: prem(28);
+  margin: 0 0 prem(25);
+  font-size: clamp(prem(20), 2.4vw, prem(24));
   font-weight: $bold;
   line-height: 1.5;
+  text-align: center;
   letter-spacing: 0.1em;
-  color: $text-dark;
+  color: $primary-cyan;
+
+  @include mq("lg") {
+    font-size: clamp(prem(20), 3.4vw, prem(30));
+  }
+}
+
+.p-problem__target-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include mq("lg") {
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+  }
+}
+
+.p-problem__target-visual {
+  flex-shrink: 0;
+}
+
+.p-problem__target-icon {
+  display: block;
 }
 
 .p-problem__target-list {
   margin: 0;
   padding: 0;
-  list-style: none;
+  padding-left: prem(20);
+  list-style: disc;
 }
 
 .p-problem__target-list li {
-  margin-bottom: prem(15);
-  font-size: prem(18);
+  margin-bottom: prem(12);
+  font-size: prem(16);
   font-weight: $medium;
-  line-height: 1.78;
-  letter-spacing: 0.075em;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
   color: $text-dark;
+
+  @include mq("lg") {
+    margin-bottom: prem(4);
+    font-size: clamp(prem(15), 1.2vw, prem(16));
+  }
+
+  @include mq("md") {
+    font-size: clamp(prem(15), 1.6vw, prem(17));
+  }
 }
 
 .p-problem__target-list li:last-child {
