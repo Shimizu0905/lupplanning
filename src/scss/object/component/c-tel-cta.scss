@@ -19,6 +19,14 @@
   line-height: 1.6;
   letter-spacing: 0.08em;
   color: $text-dark;
+
+  @include mq("sm") {
+    font-size: clamp(prem(16), 4.3vw, prem(30));
+  }
+
+  @include mq("md") {
+    font-size: clamp(prem(16), 4.3vw, prem(20));
+  }
 }
 
 .c-tel-cta__box {
@@ -112,7 +120,7 @@
 
 @include mq("sm") {
   .c-tel-cta__text {
-    font-size: clamp(prem(16), 4.6vw, prem(30));
+    font-size: clamp(prem(16), 4.3vw, prem(30));
     line-height: 1.5;
   }
 

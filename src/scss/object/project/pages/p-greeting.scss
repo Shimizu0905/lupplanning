@@ -31,7 +31,8 @@
     grid-template-areas:
       "title"
       "image-wrap"
-      "body";
+      "body"
+      "caption-sp";
     gap: prem(24);
     padding: prem(40) prem(20);
   }
@@ -57,6 +58,10 @@
   @include mq("md") {
     margin-bottom: 0;
     text-align: center;
+  }
+
+  @include mq("md") {
+    margin-top: 0;
   }
 }
 
@@ -96,6 +101,10 @@
 
 .p-greeting__caption {
   text-align: center;
+
+  @include mq("md") {
+    display: none;
+  }
 }
 
 .p-greeting__caption-company {
@@ -106,6 +115,33 @@
 }
 
 .p-greeting__caption-name {
+  margin: 0;
+  font-size: prem(14);
+  font-weight: $medium;
+  line-height: 2.36;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-greeting__caption-sp {
+  display: none;
+  grid-area: caption-sp;
+  text-align: center;
+
+  @include mq("md") {
+    display: block;
+  }
+}
+
+.p-greeting__caption-sp-company {
+  margin: 0;
+  font-size: prem(14);
+  font-weight: $medium;
+  letter-spacing: 0.1em;
+  color: $text-dark;
+}
+
+.p-greeting__caption-sp-name {
   margin: 0;
   font-size: prem(14);
   font-weight: $medium;

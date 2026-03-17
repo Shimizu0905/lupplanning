@@ -27,3 +27,11 @@
     display: block;
   }
 }
+
+.u-br-sm-show {
+  display: none;
+
+  @include mq("sm") {
+    display: block;
+  }
+}

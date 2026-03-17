@@ -102,6 +102,10 @@
   display: flex;
   justify-content: center;
   margin-top: prem(50);
+
+  @include mq("md") {
+    margin-top: prem(32);
+  }
 }
 
 .p-problem__bottom-arrow-img {
@@ -109,6 +113,10 @@
   width: 100%;
   max-width: prem(675);
   height: auto;
+
+  @include mq("md") {
+    max-width: clamp(338px, 30.09vw, 675px);
+  }
 }
 
 .p-problem__target-card {
@@ -120,6 +128,11 @@
   @include mq("lg") {
     width: clamp(600px, 54.6vw, 781px);
     padding: 2vw;
+  }
+
+  @include mq("md") {
+    width: 100%;
+    padding: prem(40) prem(20);
   }
 }
 
@@ -146,6 +159,12 @@
     justify-content: center;
     align-items: center;
     gap: 2vw;
+  }
+
+  @include mq("md") {
+    flex-direction: column;
+    align-items: center;
+    gap: prem(32);
   }
 }
 
