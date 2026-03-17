@@ -14,7 +14,7 @@
 }
 
 .p-contact__inner {
-  max-width: clamp(650px, 40vw, 960px);
+  max-width: clamp(650px, 68vw, 960px);
   padding: 0 prem(25);
 
   @include mq("md") {
@@ -107,6 +107,7 @@
   height: 31px;
   margin: 0;
   cursor: pointer;
+  accent-color: $primary-cyan;
 
   @include mq("sm") {
     width: 24px;

@@ -5,7 +5,7 @@
   background-color: $white;
 
   @include mq("md") {
-    padding: prem(72) 0;
+    padding: prem(64) 0;
   }
 }
 
@@ -23,7 +23,7 @@
   }
 
   @include mq("md") {
-    margin-bottom: prem(56);
+    margin-bottom: prem(40);
   }
 }
 
@@ -131,7 +131,7 @@
   }
 
   @include mq("md") {
-    width: 100%;
+    width: clamp(400px, 65.6vw, 600px);
     padding: prem(40) prem(20);
   }
 }

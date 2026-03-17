@@ -54,17 +54,36 @@
   object-fit: contain;
 }
 
-/* md以下：左にロゴ、右にボタンを配置（重なり解消） */
+/* md以下：左にロゴ、右にボタンを横並び配置 */
 @include mq("md") {
   .p-header__inner {
+    display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
     padding: prem(5) prem(20);
+  }
+
+  .p-header__logo {
+    flex-shrink: 0;
   }
 
   .p-header__btn-box {
     position: relative;
     right: auto;
-    transform: none;
     width: prem(160);
+    transform: none;
+    flex-shrink: 0;
+  }
+}
+
+/* sm以下：より狭い画面用に余白・ボタン幅を調整 */
+@include mq("sm") {
+  .p-header__inner {
+    padding: prem(5) prem(15);
+  }
+
+  .p-header__btn-box {
+    width: prem(140);
   }
 }

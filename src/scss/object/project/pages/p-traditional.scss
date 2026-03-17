@@ -58,6 +58,8 @@
   @include mq("md") {
     flex-direction: column;
     gap: prem(36);
+    max-width: 580px;
+    margin: 0 auto;
   }
 
   @include mq("sm") {
@@ -290,9 +292,9 @@
   inset: 0;
 
   @include mq("md") {
-    inset: 50% auto auto 50%;
     width: clamp(248px, 41vw, 315px);
     transform: translate(-50%, -50%);
+    inset: 50% auto auto 50%;
     aspect-ratio: 1;
   }
 

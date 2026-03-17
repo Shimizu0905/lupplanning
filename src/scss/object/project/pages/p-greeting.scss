@@ -13,47 +13,47 @@
 
 .p-greeting__content {
   display: grid;
+  align-items: start;
+  gap: prem(40);
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   grid-template-areas:
     "title image-wrap"
     "body image-wrap"
     "body image-wrap";
-  align-items: start;
-  gap: prem(40);
+  max-width: prem(960);
+  margin: 0 auto;
   padding: prem(60) prem(100);
   border-radius: prem(10);
   background-color: $white;
-  margin: 0 auto;
-  max-width: prem(960);
 
   @include mq("md") {
+    gap: prem(24);
     grid-template-columns: 1fr;
     grid-template-areas:
       "title"
       "image-wrap"
       "body"
       "caption-sp";
-    gap: prem(24);
     padding: prem(40) prem(20);
   }
 }
 
 .p-greeting__image-wrap {
-  grid-area: image-wrap;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: prem(12);
+  grid-area: image-wrap;
 }
 
 .p-greeting__title {
   margin: prem(40) 0 0;
-  grid-area: title;
-  align-self: end;
   font-size: clamp(prem(18), 2.7vw, prem(20));
   font-weight: $bold;
   letter-spacing: 0.1em;
   color: $text-dark;
+  grid-area: title;
+  align-self: end;
 
   @include mq("md") {
     margin-bottom: 0;
@@ -66,12 +66,12 @@
 }
 
 .p-greeting__body {
-  grid-area: body;
   font-size: clamp(prem(14), 2vw, prem(16));
   font-weight: $medium;
-  letter-spacing: 0.1em;
   line-height: 1.8;
+  letter-spacing: 0.1em;
   color: $text-dark;
+  grid-area: body;
 }
 
 .p-greeting__body p {
@@ -85,8 +85,8 @@
 .p-greeting__image {
   display: flex;
   justify-content: center;
-  max-width: prem(469);
   width: 100%;
+  max-width: prem(469);
 
   @include mq("md") {
     max-width: prem(260);
@@ -125,8 +125,8 @@
 
 .p-greeting__caption-sp {
   display: none;
-  grid-area: caption-sp;
   text-align: center;
+  grid-area: caption-sp;
 
   @include mq("md") {
     display: block;

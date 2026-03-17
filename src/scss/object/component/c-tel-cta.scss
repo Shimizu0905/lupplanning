@@ -39,9 +39,9 @@
   background-color: $primary-yellow;
 
   @include mq("md") {
+    gap: prem(20);
     width: clamp(500px, 40.6vw, 600px);
     height: 100%;
-    gap: prem(20);
   }
 
   @include mq("sm") {

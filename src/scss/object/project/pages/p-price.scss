@@ -124,13 +124,16 @@
 }
 
 .p-price__notes {
+  display: flex;
+  flex-direction: column;
+  gap: prem(4);
   margin: 0;
   padding-left: 1em;
   font-size: clamp(prem(13), 1vw, prem(16));
   font-weight: $medium;
-  line-height: 1.9;
+  line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #4a4a4a;
+  color: #101010;
   text-indent: -1em;
 
   @include mq("md") {
@@ -161,11 +164,13 @@
 }
 
 .p-price__caption {
-  margin-bottom: prem(48);
-  padding: prem(40) prem(50);
+  width: clamp(600px, 68vw, 960px);
+  margin: 0 auto prem(48);
+  padding: prem(64) prem(80);
   background-color: $bg-light-cyan;
 
   @include mq("md") {
+    width: 100%;
     margin-bottom: prem(32);
     padding: prem(32) prem(24);
   }
@@ -175,7 +180,8 @@
   display: flex;
   flex-direction: column;
   gap: prem(20);
-  margin: 0 0 prem(24);
+  width: fit-content;
+  margin: 0 auto prem(24);
   padding: 0;
   list-style: none;
 
@@ -187,7 +193,7 @@
 
 .p-price__caption-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: prem(16);
 }
 
@@ -212,20 +218,20 @@
 }
 
 .p-price__caption-text {
-  font-size: clamp(prem(14), 1.2vw, prem(23));
+  font-size: clamp(prem(20), 1.7vw, prem(46));
   font-weight: $bold;
   line-height: 1.5;
   letter-spacing: 0.075em;
   color: $primary-cyan;
 
   @include mq("md") {
-    font-size: prem(14);
+    font-size: clamp(prem(18), 2.3vw, prem(20));
   }
 }
 
 .p-price__caption-lead {
   margin: 0;
-  font-size: clamp(prem(16), 1.5vw, prem(20));
+  font-size: clamp(prem(18), 1.5vw, prem(40));
   font-weight: $bold;
   line-height: 1.5;
   text-align: center;
@@ -238,7 +244,8 @@
 }
 
 .p-price__plan-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: prem(40);
   grid-template-columns: repeat(3, 1fr);
 
@@ -357,7 +364,7 @@
 
 .p-price__plan-card-label {
   margin: 0 0 prem(8);
-  font-size: prem(18);
+  font-size: clamp(prem(16), 1.6vw, prem(18));
   font-weight: $bold;
   line-height: 1.5;
   letter-spacing: 0.1em;

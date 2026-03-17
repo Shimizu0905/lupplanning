@@ -92,7 +92,7 @@
   @include mq("md") {
     margin: prem(40) 0 0;
     font-size: clamp(prem(24), 2.4vw, prem(30));
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 3px rgb(0 0 0 / 80%), 0 2px 6px rgb(0 0 0 / 50%);
   }
 }
 
@@ -106,7 +106,7 @@
 
   @include mq("md") {
     font-size: clamp(prem(24), 2.4vw, prem(30));
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 3px rgb(0 0 0 / 80%), 0 2px 6px rgb(0 0 0 / 50%);
   }
 }
 
