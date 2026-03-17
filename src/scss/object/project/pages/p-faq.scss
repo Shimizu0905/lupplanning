@@ -1,4 +1,4 @@
-@use '../../../foundation' as *;
+@use "../../../foundation" as *;
 
 .p-faq {
   padding: prem(100) 0;
@@ -12,27 +12,26 @@
 }
 
 .p-faq__header {
-  margin-bottom: prem(80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(36px, 4vw, 56px);
   text-align: center;
 }
 
-.p-faq__label {
-  margin: 0 0 prem(10);
-  font-family: 'DIN Condensed', sans-serif;
-  font-size: prem(24);
-  font-weight: $bold;
-  line-height: 3.17;
-  letter-spacing: 0.05em;
-  color: $primary-cyan;
+.p-faq__en {
+  width: fit-content;
+  height: 26px;
+  margin: 0 auto prem(10);
+}
+
+.p-faq__en img {
+  width: inherit;
+  height: inherit;
 }
 
 .p-faq__title {
   margin: 0;
-  font-size: prem(36);
-  font-weight: $bold;
-  line-height: 2.11;
-  letter-spacing: 0.1em;
-  color: $text-dark;
 }
 
 .p-faq__list {
@@ -78,18 +77,21 @@
   line-height: 1.55;
   letter-spacing: 0.1em;
   color: $text-brown;
+
+  @include mq("md") {
+    font-size: prem(16);
+  }
 }
 
 .p-faq__q-icon {
   position: absolute;
   top: 50%;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-top: 10px solid $text-brown;
-  border-right: 7px solid transparent;
-  border-left: 7px solid transparent;
-  transform: translateY(-50%);
+  right: 20px;
+  width: 14px;
+  height: auto;
+  transition: transform 0.3s ease;
+  transform: translateY(-50%) rotate(180deg);
+  object-fit: contain;
 }
 
 .p-faq__answer {
@@ -139,5 +141,5 @@
 }
 
 .p-faq__question[aria-expanded="true"] .p-faq__q-icon {
-  transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(0deg);
 }

@@ -3,36 +3,42 @@
 .p-contact {
   padding: prem(100) 0;
   background-color: $white;
+
+  @include mq("md") {
+    padding: prem(80) 0;
+  }
+
+  @include mq("sm") {
+    padding: prem(60) 0;
+  }
 }
 
 .p-contact__inner {
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: clamp(650px, 40vw, 960px);
   padding: 0 prem(25);
+
+  @include mq("md") {
+    max-width: 100%;
+  }
 }
 
 .p-contact__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: prem(80);
   text-align: center;
 }
 
-.p-contact__label {
-  margin: 0 0 prem(10);
-  font-family: 'DIN Condensed', sans-serif;
-  font-size: prem(24);
-  font-weight: $bold;
-  line-height: 3.17;
-  letter-spacing: 0.05em;
-  color: $primary-cyan;
+.p-contact__en {
+  width: fit-content;
+  height: 26px;
+  margin: 0 auto prem(10);
 }
 
-.p-contact__title {
-  margin: 0;
-  font-size: prem(36);
-  font-weight: $bold;
-  line-height: 2.11;
-  letter-spacing: 0.1em;
-  color: $text-dark;
+.p-contact__en-img {
+  width: inherit;
+  height: inherit;
 }
 
 .p-contact__form {
@@ -68,14 +74,17 @@
   line-height: 1.72;
   letter-spacing: 0.1em;
   color: $text-dark;
+
+  @include mq("sm") {
+    font-size: prem(16);
+  }
 }
 
 .p-contact__form-required {
   display: inline-block;
-  padding: prem(4) prem(12);
+  padding: prem(3) prem(14);
   font-size: prem(14);
   font-weight: $medium;
-  line-height: 1.75;
   letter-spacing: 0.1em;
   color: $text-dark;
   background-color: $primary-yellow;
@@ -98,6 +107,11 @@
   height: 31px;
   margin: 0;
   cursor: pointer;
+
+  @include mq("sm") {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .p-contact__form-radio span {
@@ -106,6 +120,10 @@
   line-height: 1.72;
   letter-spacing: 0.1em;
   color: $text-dark;
+
+  @include mq("sm") {
+    font-size: prem(16);
+  }
 }
 
 .p-contact__form-input {
@@ -119,6 +137,10 @@
   letter-spacing: 0.1em;
   color: $text-dark;
   background-color: $white;
+
+  @include mq("sm") {
+    padding: prem(10) prem(14);
+  }
 }
 
 .p-contact__form-textarea {
@@ -205,6 +227,12 @@
   font-weight: $bold;
   line-height: 1.75;
   letter-spacing: 0.1em;
+
+  @include mq("md") {
+    width: clamp(300px, 40vw, 400px);
+    height: prem(60);
+    font-size: prem(20);
+  }
 }
 
 .p-privacy-modal {
@@ -351,11 +379,6 @@
   .p-contact__form-radios {
     flex-direction: column;
     gap: prem(14);
-  }
-
-  .p-contact__form-submit {
-    width: 100%;
-    max-width: prem(440);
   }
 
   .p-privacy-modal {

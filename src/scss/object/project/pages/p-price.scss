@@ -10,18 +10,22 @@
 }
 
 .p-price__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 0 clamp(36px, 4vw, 56px);
   text-align: center;
 }
 
 .p-price__en {
+  width: fit-content;
+  height: 26px;
   margin: 0 0 prem(10);
-  font-family: $font-family-en;
-  font-size: clamp(prem(34), 4vw, prem(56));
-  font-weight: $bold;
-  line-height: 1;
-  letter-spacing: 0.2em;
-  color: #b9dfea;
+}
+
+.p-price__en-img {
+  width: inherit;
+  height: inherit;
 }
 
 .p-price__title {
@@ -122,12 +126,12 @@
 .p-price__notes {
   margin: 0;
   padding-left: 1em;
-  text-indent: -1em;
   font-size: clamp(prem(13), 1vw, prem(16));
   font-weight: $medium;
   line-height: 1.9;
   letter-spacing: 0.04em;
   color: #4a4a4a;
+  text-indent: -1em;
 
   @include mq("md") {
     font-size: prem(13);
@@ -157,13 +161,13 @@
 }
 
 .p-price__caption {
-  padding: prem(40) prem(50);
   margin-bottom: prem(48);
+  padding: prem(40) prem(50);
   background-color: $bg-light-cyan;
 
   @include mq("md") {
-    padding: prem(32) prem(24);
     margin-bottom: prem(32);
+    padding: prem(32) prem(24);
   }
 }
 
@@ -188,12 +192,12 @@
 }
 
 .p-price__caption-icon {
-  flex-shrink: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: prem(35);
   height: prem(35);
+  flex-shrink: 0;
 
   @include mq("md") {
     width: prem(30);
@@ -224,8 +228,8 @@
   font-size: clamp(prem(16), 1.5vw, prem(20));
   font-weight: $bold;
   line-height: 1.5;
-  letter-spacing: 0.075em;
   text-align: center;
+  letter-spacing: 0.075em;
   color: $text-dark;
 
   @include mq("md") {
@@ -235,22 +239,22 @@
 
 .p-price__plan-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: prem(40);
+  grid-template-columns: repeat(3, 1fr);
 
   @include mq("md") {
-    grid-template-columns: 1fr;
     gap: prem(32);
+    grid-template-columns: 1fr;
   }
 }
 
 .p-price__plan-card {
   position: relative;
-  overflow: hidden;
   padding: prem(40) prem(50) prem(50);
-  background-color: $white;
   border: 3px solid $primary-cyan;
   border-radius: prem(30);
+  background-color: $white;
+  overflow: hidden;
 
   @include mq("md") {
     padding: prem(32) prem(24) prem(40);
@@ -258,19 +262,19 @@
 }
 
 .p-price__plan-card-header {
-  margin: prem(-40) prem(-50) prem(32) prem(-50);
+  margin: prem(-40) prem(-50) prem(32);
   padding: prem(20);
+  border-radius: prem(27) prem(27) 0 0;
   font-size: prem(24);
   font-weight: $bold;
   line-height: 1.46;
-  letter-spacing: 0.1em;
   text-align: center;
+  letter-spacing: 0.1em;
   color: $white;
   background-color: $primary-cyan;
-  border-radius: prem(27) prem(27) 0 0;
 
   @include mq("md") {
-    margin: prem(-32) prem(-24) prem(24) prem(-24);
+    margin: prem(-32) prem(-24) prem(24);
     padding: prem(16);
     font-size: prem(20);
   }
@@ -283,8 +287,8 @@
   gap: prem(16);
 
   @include mq("md") {
-    gap: prem(10);
     flex-direction: column;
+    gap: prem(10);
   }
 }
 
@@ -320,8 +324,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   width: clamp(prem(210), 16vw, prem(230));
+  text-align: center;
 
   @include mq("md") {
     width: clamp(prem(160), 27vw, prem(200));
@@ -375,8 +379,8 @@
 
   @include mq("md") {
     font-size: clamp(prem(10), 2vw, prem(15));
-    letter-spacing: 0.05em;
     line-height: 1.6;
+    letter-spacing: 0.05em;
     text-indent: -1em;
   }
 }
@@ -386,8 +390,8 @@
 }
 
 .p-price__plan-card-price {
-  margin: 0;
   height: prem(80);
+  margin: 0;
 
   @include mq("md") {
     height: prem(50);

@@ -12,27 +12,22 @@
 }
 
 .p-company__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: prem(80);
   text-align: center;
 }
 
-.p-company__label {
-  margin: 0 0 prem(10);
-  font-family: 'DIN Condensed', sans-serif;
-  font-size: prem(24);
-  font-weight: $bold;
-  line-height: 3.17;
-  letter-spacing: 0.05em;
-  color: $primary-cyan;
+.p-company__en {
+  width: fit-content;
+  height: 26px;
+  margin: 0 auto prem(10);
 }
 
-.p-company__title {
-  margin: 0;
-  font-size: prem(36);
-  font-weight: $bold;
-  line-height: 2.11;
-  letter-spacing: 0.1em;
-  color: $text-dark;
+.p-company__en-img {
+  width: inherit;
+  height: inherit;
 }
 
 .p-company__image {
@@ -40,6 +35,10 @@
   border-radius: prem(10);
   background-color: $bg-light-gray;
   overflow: hidden;
+
+  @include mq("md") {
+    margin-bottom: prem(40);
+  }
 }
 
 .p-company__img {
@@ -48,37 +47,55 @@
   object-fit: cover;
 }
 
+.p-company__map {
+  display: block;
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
 .p-company__info {
-  margin: 0;
+  width: fit-content;
+  margin: 0 auto;
   padding: 0;
 }
 
 .p-company__info-row {
   display: grid;
-  gap: prem(40);
-  grid-template-columns: 150px 1fr;
-  padding: prem(28) 0;
-  border-bottom: 1px solid $border-light-gray;
-}
+  align-items: baseline;
+  grid-template-columns: prem(160) 1fr;
+  padding: prem(20) 0;
 
-.p-company__info-row:first-child {
-  border-top: 1px solid $border-light-gray;
+  @include mq("md") {
+    grid-template-columns: prem(120) 1fr;
+  }
+
+  @include mq("sm") {
+    grid-template-columns: 1fr;
+    padding: prem(10) 0;
+  }
 }
 
 .p-company__info-label {
   margin: 0;
-  font-size: prem(14);
+  font-size: prem(16);
   font-weight: $regular;
-  line-height: 4;
   letter-spacing: 0.1em;
   color: $text-dark;
+
+  @include mq("sm") {
+    font-size: prem(14);
+  }
 }
 
 .p-company__info-data {
   margin: 0;
-  font-size: prem(14);
+  font-size: prem(16);
   font-weight: $regular;
-  line-height: 4;
   letter-spacing: 0.1em;
   color: $text-dark;
+
+  @include mq("sm") {
+    font-size: prem(14);
+  }
 }
