@@ -28,6 +28,15 @@
 
   /* 4K対応時: fv-bg@2x.webp を用意して 2x を追加可 */
   overflow: hidden;
+
+  @include mq("md") {
+    height: clamp(420px, 80vh, 760px);
+  }
+
+  @include mq("sm") {
+    height: clamp(420px, 80vh, 560px);
+    background-image: url("../../assets/images/fv/fv-bg-sp.png");
+  }
 }
 
 .p-fv__inner {
@@ -48,6 +57,15 @@
 .p-fv__title {
   width: clamp(670px, 50.09vw, 957px);
   margin: 0;
+
+  @include mq("md") {
+    width: clamp(400px, 30.09vw, 450px);
+    margin: 0 auto;
+  }
+
+  @include mq("sm") {
+    width: 100%;
+  }
 }
 
 .p-fv__title-img {
@@ -55,6 +73,11 @@
   width: 100%;
   max-width: 100%;
   height: auto;
+
+  @include mq("md") {
+    width: clamp(400px, 30.09vw, 450px);
+    margin: 0 auto;
+  }
 }
 
 .p-fv__lead {
@@ -65,6 +88,12 @@
   text-align: center;
   letter-spacing: 0.06em;
   color: $white;
+
+  @include mq("md") {
+    margin: prem(40) 0 0;
+    font-size: clamp(prem(24), 2.4vw, prem(30));
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .p-fv__text {
@@ -74,45 +103,10 @@
   line-height: 1.7;
   letter-spacing: 0.08em;
   color: $white;
-}
 
-@include mq("lg") {
-  .p-fv {
-    padding: prem(24) prem(24) 0;
-  }
-}
-
-@include mq("md") {
-  .p-fv {
-    min-height: 420px;
-    padding: prem(24) prem(20) 0;
-  }
-
-  .p-fv__inner {
-    width: min(100%, 720px);
-  }
-
-  .p-fv__title {
-    width: min(100%, 560px);
-  }
-
-  .p-fv__lead {
-    line-height: 1.5;
-  }
-
-  .p-fv__text {
-    line-height: 1.6;
-  }
-}
-
-@include mq("sm") {
-  .p-fv {
-    height: clamp(420px, 52vh, 560px);
-    margin-top: 100px;
-  }
-
-  .p-fv__title {
-    width: 100%;
+  @include mq("md") {
+    font-size: clamp(prem(24), 2.4vw, prem(30));
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
   }
 }
 

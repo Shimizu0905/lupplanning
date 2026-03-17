@@ -1,4 +1,4 @@
-@use '../../../foundation' as *;
+@use "../../../foundation" as *;
 
 .p-greeting {
   padding: prem(100) 0;
@@ -13,33 +13,59 @@
 
 .p-greeting__content {
   display: grid;
-  gap: prem(60);
-  grid-template-columns: 1fr 1fr;
-  padding: prem(60) prem(40);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-areas:
+    "title image-wrap"
+    "body image-wrap"
+    "body image-wrap";
+  align-items: start;
+  gap: prem(40);
+  padding: prem(60) prem(100);
   border-radius: prem(10);
   background-color: $white;
+  margin: 0 auto;
+  max-width: prem(960);
+
+  @include mq("md") {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image-wrap"
+      "body";
+    gap: prem(24);
+    padding: prem(40) prem(20);
+  }
 }
 
-.p-greeting__text {
+.p-greeting__image-wrap {
+  grid-area: image-wrap;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: prem(12);
 }
 
 .p-greeting__title {
-  margin: 0 0 prem(40);
-  font-size: prem(18);
+  margin: prem(40) 0 0;
+  grid-area: title;
+  align-self: end;
+  font-size: clamp(prem(18), 2.7vw, prem(20));
   font-weight: $bold;
-  line-height: 2.96;
   letter-spacing: 0.1em;
   color: $text-dark;
+
+  @include mq("md") {
+    margin-bottom: 0;
+    text-align: center;
+  }
 }
 
 .p-greeting__body {
-  font-size: prem(14);
+  grid-area: body;
+  font-size: clamp(prem(14), 2vw, prem(16));
   font-weight: $medium;
-  line-height: 2.36;
   letter-spacing: 0.1em;
+  line-height: 1.8;
   color: $text-dark;
 }
 
@@ -53,16 +79,18 @@
 
 .p-greeting__image {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  max-width: prem(469);
+  width: 100%;
+
+  @include mq("md") {
+    max-width: prem(260);
+    margin: 0 auto;
+  }
 }
 
 .p-greeting__img {
-  width: 484px;
-  height: 484px;
-  margin-bottom: prem(30);
-  border: 1px solid $border-light-gray;
-  border-radius: 50%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -71,10 +99,8 @@
 }
 
 .p-greeting__caption-company {
-  margin: 0 0 prem(10);
   font-size: prem(14);
   font-weight: $medium;
-  line-height: 2.36;
   letter-spacing: 0.1em;
   color: $text-dark;
 }

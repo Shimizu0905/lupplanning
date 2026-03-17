@@ -54,4 +54,17 @@
   object-fit: contain;
 }
 
+/* md以下：左にロゴ、右にボタンを配置（重なり解消） */
+@include mq("md") {
+  .p-header__inner {
+    justify-content: space-between;
+    padding: prem(5) prem(20);
+  }
 
+  .p-header__btn-box {
+    position: relative;
+    right: auto;
+    transform: none;
+    width: prem(160);
+  }
+}
