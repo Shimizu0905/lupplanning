@@ -80,7 +80,7 @@ $useToken = 0;
 $BccMail = "";
 
 // 管理者宛に送信されるメールのタイトル（件名）
-$subject = "【お問い合わせ】LUP Planning ホームページからのお問い合わせ";
+$subject = "【お問い合わせ】合同会社 LUP Planning ホームページからのお問い合わせ";
 
 // 送信確認画面の表示(する=1, しない=0)
 $confirmDsp = 0;
@@ -281,8 +281,9 @@ if (($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="format-detection" content="telephone=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>お問い合わせ確認 | LUP Planning</title>
+		<title>お問い合わせ確認 | 合同会社 LUP Planning</title>
 		<meta name="description" content="AI搭載防犯カメラで侵入前に光と音で撃退。設置後も徹底フォローする人間力の防犯をご提供します。">
+		<link rel="icon" href="./assets/images/common/logo.png" type="image/png">
 		<link rel="stylesheet" href="./assets/css/style.css">
 		<script type="module" src="./assets/js/main.js"></script>
 	</head>
@@ -292,7 +293,7 @@ if (($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1) {
 				<div class="p-header__inner">
 					<h1 class="p-header__logo">
 						<a href="./" class="p-header__logo-link">
-							<img src="./assets/images/common/logo.png" alt="LUP Planning" class="p-header__logo-img">
+							<img src="./assets/images/common/logo.png" alt="合同会社 LUP Planning" class="p-header__logo-img">
 						</a>
 					</h1>
 					<div class="p-header__btn-box">
@@ -377,6 +378,7 @@ if (($jumpPage == 0 && $sendmail == 1) || ($jumpPage == 0 && ($confirmDsp == 0 &
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 		<meta name="format-detection" content="telephone=no">
 		<title>完了画面</title>
+		<link rel="icon" href="./assets/images/common/logo.png" type="image/png">
 		<link rel="stylesheet" href="./style.css">
 		<script src="./main.js" defer></script>
 	</head>

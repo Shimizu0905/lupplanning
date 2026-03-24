@@ -28,6 +28,14 @@
   }
 }
 
+.u-br-md-none {
+  display: block;
+
+  @include mq("md") {
+    display: none;
+  }
+}
+
 .u-br-sm-show {
   display: none;
 

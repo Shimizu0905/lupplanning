@@ -7,4 +7,8 @@
   text-align: center;
   letter-spacing: 0.08em;
   color: $text-dark;
+
+  @include mq("sm") {
+    font-size: clamp(prem(28), 5.7vw, prem(30));
+  }
 }

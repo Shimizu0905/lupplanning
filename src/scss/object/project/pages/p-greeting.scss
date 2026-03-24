@@ -60,8 +60,9 @@
     text-align: center;
   }
 
-  @include mq("md") {
+  @include mq("sm") {
     margin-top: 0;
+    font-size: clamp(prem(20), 5.7vw, prem(24));
   }
 }
 

@@ -17,17 +17,6 @@
   text-align: center;
 }
 
-.p-price__en {
-  width: fit-content;
-  height: 26px;
-  margin: 0 0 prem(10);
-}
-
-.p-price__en-img {
-  width: inherit;
-  height: inherit;
-}
-
 .p-price__title {
   margin: 0;
   font-size: clamp(prem(28), 3vw, prem(40));
@@ -81,6 +70,7 @@
 }
 
 .p-price__label {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -94,6 +84,30 @@
   letter-spacing: 0.08em;
   color: $text-dark;
   background-color: $primary-yellow;
+  overflow: hidden;
+  isolation: isolate;
+
+  &::before {
+    position: absolute;
+    top: -18%;
+    left: -28%;
+    z-index: 1;
+    width: 14%;
+    height: 136%;
+    background: linear-gradient(
+      115deg,
+      rgb(255 255 255 / 0%) 0%,
+      rgb(255 255 255 / 16%) 35%,
+      rgb(255 255 255 / 82%) 50%,
+      rgb(255 255 255 / 16%) 65%,
+      rgb(255 255 255 / 0%) 100%
+    );
+    opacity: 0;
+    transform: skewX(-24deg) translateX(0);
+    animation: p-price-label-shine 4.1s ease-in-out infinite;
+    pointer-events: none;
+    content: "";
+  }
 
   @include mq("md") {
     min-height: auto;
@@ -102,6 +116,28 @@
     font-size: prem(16);
     line-height: 1.6;
     order: 1;
+  }
+}
+
+@keyframes p-price-label-shine {
+  0%,
+  68%,
+  100% {
+    opacity: 0;
+    transform: skewX(-24deg) translateX(0);
+  }
+
+  72% {
+    opacity: 1;
+  }
+
+  84% {
+    opacity: 1;
+    transform: skewX(-24deg) translateX(900%);
+  }
+
+  88% {
+    opacity: 0;
   }
 }
 
@@ -203,12 +239,33 @@
   align-items: center;
   width: prem(35);
   height: prem(35);
+  opacity: 0;
+  transition: opacity 0.82s cubic-bezier(0.16, 1, 0.3, 1), transform 0.82s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translate3d(-10px, 0, 0) scale(0.94);
   flex-shrink: 0;
 
   @include mq("md") {
     width: prem(30);
     height: prem(30);
   }
+}
+
+.p-price__caption-list.is-visible .p-price__caption-item:nth-child(1) .p-price__caption-icon {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition-delay: 0s;
+}
+
+.p-price__caption-list.is-visible .p-price__caption-item:nth-child(2) .p-price__caption-icon {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition-delay: 0.38s;
+}
+
+.p-price__caption-list.is-visible .p-price__caption-item:nth-child(3) .p-price__caption-icon {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition-delay: 0.76s;
 }
 
 .p-price__caption-icon-img {
@@ -226,6 +283,14 @@
 
   @include mq("md") {
     font-size: clamp(prem(18), 2.3vw, prem(20));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-price__caption-icon {
+    opacity: 1;
+    transition: none;
+    transform: none;
   }
 }
 
@@ -264,6 +329,8 @@
   overflow: hidden;
 
   @include mq("md") {
+    width: clamp(280px, 100%, 600px);
+    margin: 0 auto;
     padding: prem(32) prem(24) prem(40);
   }
 }
@@ -319,11 +386,13 @@
   display: flex;
   justify-content: space-around;
   gap: prem(24);
-  margin-bottom: prem(32);
+  margin-bottom: prem(40);
 
   @include mq("md") {
-    gap: 2vw;
-    margin-bottom: prem(24);
+    flex-direction: column;
+    justify-content: center;
+    max-width: fit-content;
+    margin: 0 auto prem(24);
   }
 }
 
@@ -331,11 +400,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: clamp(prem(210), 16vw, prem(230));
+
+  // width: clamp(prem(210), 16vw, prem(230));
+  width: fit-content;
   text-align: center;
 
   @include mq("md") {
-    width: clamp(prem(160), 27vw, prem(200));
+    flex-direction: row;
+    align-items: flex-start;
+    gap: prem(32);
+    width: 100%;
+    text-align: left;
   }
 }
 
@@ -350,9 +425,9 @@
   background-color: $bg-light-gray;
 
   @include mq("md") {
-    width: clamp(prem(80), 16vw, prem(150));
-    height: clamp(prem(80), 16vw, prem(150));
-    margin: 0 auto prem(12);
+    width: clamp(90px, 26vw, 150px);
+    height: clamp(90px, 26vw, 150px);
+    margin: 0;
   }
 }
 
@@ -360,6 +435,19 @@
   width: 60%;
   height: 60%;
   object-fit: contain;
+}
+
+.p-price__plan-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @include mq("md") {
+    flex: 1;
+    align-items: flex-start;
+    min-width: 0;
+  }
 }
 
 .p-price__plan-card-label {
@@ -371,7 +459,20 @@
   color: $primary-cyan;
 
   @include mq("md") {
-    font-size: prem(16);
+    margin: 0 0 prem(6);
+    font-size: clamp(prem(16), 3vw, prem(18));
+  }
+}
+
+.p-price__plan-card-details {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include mq("md") {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 }
 
@@ -385,15 +486,15 @@
   color: $text-dark;
 
   @include mq("md") {
-    font-size: clamp(prem(10), 2vw, prem(15));
+    font-size: clamp(prem(10), 3vw, prem(16));
     line-height: 1.6;
     letter-spacing: 0.05em;
     text-indent: -1em;
   }
-}
 
-.p-price__plan-card-detail br {
-  display: none;
+  @include mq("sm") {
+    font-size: clamp(prem(10), 3.5vw, prem(16));
+  }
 }
 
 .p-price__plan-card-price {

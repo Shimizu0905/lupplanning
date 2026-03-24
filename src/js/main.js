@@ -14,3 +14,4 @@ import './header-fv-scroll.js';
 import './pagetop.js';
 import './faq.js';
 import './privacy-modal.js';
+import './traditional.js';

@@ -48,11 +48,32 @@ if (existsSync(srcHtml)) {
   }
 
   // FV画像のみpicture要素でラップ（WebP対応・FV以外はWebPなし）
+  const distDir = resolve(projectRoot, 'dist');
+
+  // FVタイトル：picture内のimgをラップするとネストになりPC/SP切り替えが壊れるため、sourceを追加するのみ
+  distContent = distContent.replace(
+    /(<picture>\s*<source srcset=["'](\.\/assets\/images\/fv\/fv-title\.png)["'][^>]*media=["']\(min-width: 769px\)["'][^>]*>)\s*(<img)([^>]*?)(src=["'])(\.\/assets\/images\/fv\/fv-title-sp\.png)(["'])([^>]*)(>)/gi,
+    (match, pictureStart, pcPath, imgOpen, beforeSrc, srcOpen, spPath, srcClose, afterSrc, imgClose) => {
+      const webpPath = spPath.replace(/\.png$/i, '.webp');
+      const webpFullPath = resolve(distDir, webpPath.replace(/^\.\//, ''));
+      const webpSource = existsSync(webpFullPath)
+        ? `<source srcset="${webpPath}" type="image/webp" media="(max-width: 768px)">`
+        : '';
+      return `${pictureStart}\n                  ${webpSource}\n                  ${imgOpen}${beforeSrc}${srcOpen}${spPath}${srcClose}${afterSrc}${imgClose}`;
+    }
+  );
+
+  // その他のFV画像（単独img）をpictureでラップ（fv-title-spは上記で処理済みのためスキップ）
   distContent = distContent.replace(
     /<img([^>]*?)src=["'](\.\/assets\/images\/fv\/[^"']+\.(?:jpe?g|png))["']([^>]*)>/gi,
     (match, beforeSrc, srcPath, afterSrc) => {
+      if (srcPath.includes('fv-title-sp')) return match;
       const webpPath = srcPath.replace(/\.(jpe?g|png)$/i, '.webp');
-      return `<picture><source srcset="${webpPath}" type="image/webp"><img${beforeSrc}src="${srcPath}"${afterSrc}></picture>`;
+      const webpFullPath = resolve(distDir, webpPath.replace(/^\.\//, ''));
+      const webpSource = existsSync(webpFullPath)
+        ? `<source srcset="${webpPath}" type="image/webp">`
+        : '';
+      return `<picture>${webpSource}<img${beforeSrc}src="${srcPath}"${afterSrc}></picture>`;
     }
   );
 

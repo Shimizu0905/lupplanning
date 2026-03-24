@@ -27,6 +27,51 @@
   }
 }
 
+.p-problem__title-mask {
+  display: inline-block;
+  max-width: 100%;
+  opacity: 0;
+  overflow: hidden;
+  transform: translate3d(-100%, 0, 0);
+  vertical-align: top;
+}
+
+.p-problem__title-text {
+  display: inline-block;
+  max-width: 100%;
+  transform: translate3d(100%, 0, 0);
+}
+
+.js-slide-in-left.is-visible .p-problem__title-mask {
+  animation: p-problem-title-mask-in 0.82s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.js-slide-in-left.is-visible .p-problem__title-text {
+  animation: p-problem-title-text-in 0.82s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes p-problem-title-mask-in {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes p-problem-title-text-in {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .p-problem__cards {
   display: flex;
   justify-content: space-between;
@@ -38,6 +83,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-problem__title-mask,
+  .p-problem__title-text {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
 
 .p-problem__card-img {
@@ -102,6 +156,8 @@
   display: flex;
   justify-content: center;
   margin-top: prem(50);
+  opacity: 0;
+  transform: translate3d(0, -36px, 0);
 
   @include mq("md") {
     margin-top: prem(32);
@@ -119,6 +175,27 @@
   }
 }
 
+.p-problem__bottom-arrow.is-visible {
+  animation: p-problem-arrow-drop-in 1.02s cubic-bezier(0.2, 0.85, 0.28, 1) forwards;
+}
+
+@keyframes p-problem-arrow-drop-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -28px, 0);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translate3d(0, 3px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .p-problem__target-card {
   padding: prem(52) prem(10);
   border: 1px solid #5d5d5d;
@@ -132,7 +209,11 @@
 
   @include mq("md") {
     width: clamp(400px, 65.6vw, 600px);
-    padding: prem(40) prem(20);
+    padding: prem(40) prem(10);
+  }
+
+  @include mq("sm") {
+    width: 100%;
   }
 }
 
@@ -199,8 +280,22 @@
   @include mq("md") {
     font-size: clamp(prem(15), 1.6vw, prem(17));
   }
+
+  @include mq("sm") {
+    font-size: clamp(prem(14), 1.6vw, prem(16));
+  }
 }
 
 .p-problem__target-list li:last-child {
   margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-problem__title-mask,
+  .p-problem__title-text,
+  .p-problem__bottom-arrow {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }

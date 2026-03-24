@@ -3,6 +3,10 @@
 .p-faq {
   padding: prem(100) 0;
   background-color: $white;
+
+  @include mq("md") {
+    padding: prem(60) 0;
+  }
 }
 
 .p-faq__inner {
@@ -17,17 +21,6 @@
   align-items: center;
   margin-bottom: clamp(36px, 4vw, 56px);
   text-align: center;
-}
-
-.p-faq__en {
-  width: fit-content;
-  height: 26px;
-  margin: 0 auto prem(10);
-}
-
-.p-faq__en img {
-  width: inherit;
-  height: inherit;
 }
 
 .p-faq__title {

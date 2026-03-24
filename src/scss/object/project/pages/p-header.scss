@@ -1,6 +1,9 @@
 @use '../../../foundation' as *;
 
 .p-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100%;
   height: clamp(72px, 5vw, 100px);
   background-color: $white;
@@ -25,6 +28,11 @@
   width: prem(210);
   height: prem(50);
   transform: translateY(-50%);
+
+  @include mq("md") {
+    right: prem(15);
+    width: auto;
+  }
 }
 
 .p-header__btn-box a {
@@ -70,20 +78,11 @@
 
   .p-header__btn-box {
     position: relative;
+    top: auto;
     right: auto;
-    width: prem(160);
+    width: auto;
+    height: prem(40);
     transform: none;
     flex-shrink: 0;
-  }
-}
-
-/* sm以下：より狭い画面用に余白・ボタン幅を調整 */
-@include mq("sm") {
-  .p-header__inner {
-    padding: prem(5) prem(15);
-  }
-
-  .p-header__btn-box {
-    width: prem(140);
   }
 }

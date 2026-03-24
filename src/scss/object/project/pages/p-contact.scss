@@ -30,17 +30,6 @@
   text-align: center;
 }
 
-.p-contact__en {
-  width: fit-content;
-  height: 26px;
-  margin: 0 auto prem(10);
-}
-
-.p-contact__en-img {
-  width: inherit;
-  height: inherit;
-}
-
 .p-contact__form {
   display: flex;
   flex-direction: column;
@@ -233,6 +222,10 @@
     width: clamp(300px, 40vw, 400px);
     height: prem(60);
     font-size: prem(20);
+  }
+
+  @include mq("sm") {
+    width: min(80%, 440px);
   }
 }
 

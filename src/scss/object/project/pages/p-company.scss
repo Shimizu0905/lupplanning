@@ -3,6 +3,10 @@
 .p-company {
   padding: prem(100) 0;
   background-color: $bg-light-cyan;
+
+  @include mq("md") {
+    padding: prem(60) 0;
+  }
 }
 
 .p-company__inner {
@@ -17,17 +21,6 @@
   align-items: center;
   margin-bottom: prem(80);
   text-align: center;
-}
-
-.p-company__en {
-  width: fit-content;
-  height: 26px;
-  margin: 0 auto prem(10);
-}
-
-.p-company__en-img {
-  width: inherit;
-  height: inherit;
 }
 
 .p-company__image {
@@ -67,7 +60,7 @@
   padding: prem(20) 0;
 
   @include mq("md") {
-    grid-template-columns: prem(120) 1fr;
+    grid-template-columns: prem(150) 1fr;
   }
 
   @include mq("sm") {

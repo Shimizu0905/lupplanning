@@ -1,7 +1,7 @@
 @use "../../../foundation" as *;
 
 .p-traditional {
-  padding: prem(88) 0;
+  padding: 0 0 prem(88);
 
   @include mq("md") {
     padding: 0 0 prem(64);
@@ -71,11 +71,31 @@
   display: flex;
   flex: 1 1 0;
   min-width: 0;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(prem(28));
 
   @include mq("md") {
     flex: none;
     width: 100%;
   }
+}
+
+.p-traditional__list.is-visible .p-traditional__item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.p-traditional__list.is-visible .p-traditional__item:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.p-traditional__list.is-visible .p-traditional__item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.p-traditional__list.is-visible .p-traditional__item:nth-child(3) {
+  transition-delay: 0.4s;
 }
 
 .p-traditional__card {
@@ -358,5 +378,13 @@
     font-size: prem(15);
     line-height: 1.85;
     text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-traditional__item {
+    opacity: 1;
+    transition: none;
+    transform: none;
   }
 }

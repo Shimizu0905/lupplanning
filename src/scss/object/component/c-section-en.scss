@@ -1,0 +1,20 @@
+@use '../../foundation' as *;
+
+/**
+ * セクション見出しの英語ラベル画像（共通）
+ * 例: PRICE, FAQ, COMPANY, CONTACT など
+ */
+.c-section-en {
+  width: fit-content;
+  height: prem(24);
+  margin: 0 auto prem(10);
+
+  @include mq("sm") {
+    height: prem(20);
+  }
+}
+
+.c-section-en img {
+  width: inherit;
+  height: inherit;
+}
